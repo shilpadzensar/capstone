@@ -2,7 +2,7 @@
   "name": "venia",
   "version": "0.2.0",
   "private": true,
-  "homepage": "https://shilpadzensar.github.io/venia/",
+  "homepage": "https://shilpadzensar.github.io/capstone/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.2",
     "async-ops": "^1.1.7",

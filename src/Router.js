@@ -14,9 +14,9 @@ const Router = () => (
     <BrowserRouter>
         <App>
             <Routes>
-                <Route path="/" element={<Navigate to="venia" />} />
+                <Route path="/" element={<Navigate to="capstone" />} />
 
-                <Route path="venia" element={<HomePage />} />
+                <Route path="capstone" element={<HomePage />} />
 
                 <Route path="/product" element={<ProductListPage />} />
 
