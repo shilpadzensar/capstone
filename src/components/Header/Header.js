@@ -10,10 +10,10 @@ import {Link} from 'react-router-dom';
 import './Header.scss';
 
 const navArr = [
-    { id: 1, name: "Women", link: "/venia" },
-    { id: 2, name: "Men", link: "/venia" },
-    { id: 3, name: "Smart Gear", link: "/venia" },
-    { id: 4, name: "Accessories", link: "/venia" }
+    { id: 1, name: "Women", link: "/capstone" },
+    { id: 2, name: "Men", link: "/capstone" },
+    { id: 3, name: "Smart Gear", link: "/capstone" },
+    { id: 4, name: "Accessories", link: "/capstone" }
 ];
 
 function Header() {
@@ -29,7 +29,7 @@ function Header() {
                     <img className="__hamburger" id="hamburger" onClick={() => setToggle(!toggle)} aria-hidden="true"
                         data-state="show" src={Hamburger} ></img>
 
-                    <Link to="/venia" aria-label="go to venia home page"><img src={Logo} className="header__logo" alt="venia logo" /></Link>
+                    <Link to="/capstone" aria-label="go to venia home page"><img src={Logo} className="header__logo" alt="venia logo" /></Link>
 
                     <ul className="nav__inks">
                         {navArr?.map((nav) => {

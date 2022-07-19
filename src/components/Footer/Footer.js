@@ -68,7 +68,7 @@ const Footer = () => {
 
             <article className='bottom__block aem-Grid aem-Grid--12'>
                 <div className='footer__logo aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--tablet--12 aem-GridColumn--phone--12'>
-                    <Link to="/"><img src={logo} alt="venia logo" /></Link>
+                    <Link to="/capstone"><img src={logo} alt="venia logo" /></Link>
                 </div>
                 <div className='footer__copyright aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--tablet--12 aem-GridColumn--phone--12'>
                     © Company Name Address Ave, City Name, State ZIP.
