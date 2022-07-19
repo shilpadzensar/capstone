@@ -1,0 +1,48 @@
+@import url('https://fonts.cdnfonts.com/css/muli');
+
+@import url('http://fonts.cdnfonts.com/css/source-serif-pro');
+                
+
+@import 'framework/_aem-grid-12';
+@import './base/_desktop';
+@import 'base/_breakpoints';
+@import 'base/_mixins';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+.container {
+    padding: 0 16px;
+}
+
+.show__xs {
+    display: block;
+}
+
+.show__lg {
+    display: none;
+}
+
+.text__center {
+    text-align: center;
+}
+
+
+@include desktop {
+    .container {
+        //padding: 0 136px;
+
+        padding: 0 32px;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .show__xs {
+        display: none;
+    }
+
+    .show__lg {
+        display: block;
+    }
+}                            

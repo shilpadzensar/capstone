@@ -1,0 +1,127 @@
+@import '../../styles/base/mixins';
+
+
+.footer-wrapper {
+    article {
+        border-top: var(--unnamed-border-solid);
+        border-bottom: var(--unnamed-border-solid);
+
+        &:nth-child(1) {
+            padding: 60px 0 32px;
+        }
+
+        &:nth-child(2) {
+            padding-top: 34px;
+
+            div {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .footer__block {
+        margin-bottom: 32px;
+
+        .link__list {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding: 0;
+
+            li {
+                display: block;
+                margin-bottom: 8px;
+                font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+                letter-spacing: var(--unnamed-character-spacing-0);
+            }
+
+            a {
+                text-decoration: none;
+                color: var(--gray-d1);
+            }
+        }
+
+        .followus__info {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            text-align: left;
+            color: var(--unnamed-color-545D63);
+            margin: 16px 0;
+        }
+
+        .social__links {
+            svg {
+                margin-right: 16px;
+            }
+        }
+    }
+
+    .bottom__block {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .footer__copyright {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-17-5) var(--unnamed-font-family-muli);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-545D63);
+        padding: 0 13%;
+        text-align: center;
+    }
+
+    .footer__logo {
+        text-align: center;
+
+        img {
+            width: 120px;
+        }
+    }
+
+    .footer__links {
+        text-align: center;
+
+        a {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-17-5) Proxima Nova;
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            margin-left: 16px;
+        }
+    }
+
+}
+
+
+@include tablet {
+
+    .footer-wrapper {
+
+        article {
+            &:nth-child(1) {
+                padding: 60px 0 0;
+            }
+        }
+
+        .bottom__block {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .footer__links {
+            text-align: right;
+        }
+
+        .footer__copyright {
+            padding: 0;
+        }
+
+        .footer__logo {
+            text-align: initial;
+        }
+
+    }
+
+}

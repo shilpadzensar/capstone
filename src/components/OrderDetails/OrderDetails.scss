@@ -1,0 +1,38 @@
+.order-summary {
+    margin: 16px 0;
+
+    h4 {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-172026);
+        padding-bottom: 24px;
+    }
+
+    .product__name {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-172026);
+    }
+
+    img {
+        width: 100px;
+        height: 120px;
+    }
+
+    label {
+        padding-bottom: 8;
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-172026);
+    }
+
+    .product__details {
+        padding-left: 16px;
+    }
+}
+
+.grey-border {
+    border: 1px solid #D1D3D6;
+    border-radius: 2px;
+    padding: 32px;
+}

@@ -1,0 +1,109 @@
+@import '../../styles/base/mixins';
+
+.product-list-wrapper {
+
+    div:first-child {
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 0;
+
+        span {
+            font: var(--unnamed-font-style-normal) normal 600 var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+        }
+
+
+        .sort-product {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            text-align: left;
+            letter-spacing: 0px;
+            opacity: 1;
+            background: var(--white) 0% 0% no-repeat padding-box;
+            border: 2px solid var(--gray-l2);
+            border-radius: 8px;
+            opacity: 1;
+            padding: 12px;
+            width: 254px;
+            float: right;
+        }
+
+        .filter-result {
+            background: url('./images/sliders.svg');
+        }
+
+        .filter-result {
+            background: url('./images/sliders.svg');
+        }       
+    }
+
+    .show__lg {
+        display: none !important;
+    }
+
+    .show__xs{
+        div:first-child a {
+            font: var(--unnamed-font-style-normal) normal 600 var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);           
+            text-decoration: underline;
+            color: var(--gray-d2);
+
+            img:last-child{
+                margin-right: 8px;
+            }
+        }
+
+        div:last-child{
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);   
+            text-align: center;                
+        }
+    }
+
+
+    .pagination {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        padding: 30px 0;
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--unnamed-color-172026);
+        
+        li{
+            list-style: none;
+            padding-right: 20px;
+            &.active{
+                a.page-link{
+                    text-decoration: underline;
+                }    
+            }
+            a{
+                text-decoration: none;
+                color: var(--unnamed-color-172026);
+            }
+        }
+        .disabled{
+            display:none;
+        }
+        
+    }
+
+
+}
+
+
+
+@include desktop {
+    
+    .product-list-wrapper {
+
+        .show__lg {
+            display: block !important;
+        }
+    }
+
+}

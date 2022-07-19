@@ -1,0 +1,91 @@
+@import '../../styles/base/mixins';
+
+.sidebar {
+    display: none;
+    grid-template-columns: 1f 2fr;
+    margin-top: 15px;
+    
+    h4 {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-20)/14px var(--unnamed-font-family-muli);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--gray-d2);
+        box-shadow: 0px 2px var(--unnamed-color-D1D3D6);
+        padding: 16px 0;
+    }
+
+   
+    .colors__wrapper {
+        p {
+            font: var(--unnamed-font-style-normal) normal 600 var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gray-d2);
+            padding-bottom: 17px;
+        }
+
+        .color__section {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-gap: 1px;
+            grid-row-gap: 8px;
+
+
+            div {
+                width: 64px;
+                height: 40px;
+                border-radius: 6px;
+            }
+
+            .black__color {
+                background: var(--color-black) 0% 0% no-repeat padding-box;            
+            }
+
+            .white__color {
+                background: var(--white) 0% 0% no-repeat padding-box;
+                border: 2px solid var(--border1);
+            }
+
+            .teal__green {
+                background: var(--color-teal-green) 0% 0% no-repeat padding-box;
+            }
+
+            .mustard__color {
+                background: var(--color-mustard) 0% 0% no-repeat padding-box;
+            }
+
+            .blue__color {
+                background: var(--color-blue) 0% 0% no-repeat padding-box;
+            }
+
+            .red__color {
+                background: var(--color-red) 0% 0% no-repeat padding-box;
+            }
+
+            .lavender__color {
+                background: var(--color-lavender) 0% 0% no-repeat padding-box;
+            }
+
+            .pink__color {
+                background: var(--color-pink) 0% 0% no-repeat padding-box;
+            }
+
+            .dark__yellow {
+                background: var(--color-blue) 0% 0% no-repeat padding-box;
+            }
+
+            .multi__color {
+                background: transparent linear-gradient(180deg, #AF52FF 0%, #7950E8 16%, #4F5ADA 29%, #57CB76 43%, #EBC250 56%, #FF8810 69%, #E32F0F 83%, #BF1919 100%) 0% 0% no-repeat padding-box;
+            }
+
+        }
+
+    }
+}
+
+
+@include desktop {    
+    .sidebar {
+        display: grid;;
+        padding-right: 10px;
+        text-decoration: none;
+    }
+}

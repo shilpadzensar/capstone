@@ -1,0 +1,81 @@
+
+@import '../../styles/base/mixins';
+
+.banner-image-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    
+    .banner__details {       
+        padding: 16px;
+        
+        h2 {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-48)/var(--unnamed-line-spacing-60) var(--unnamed-font-family-source-serif-pro);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+        }
+
+        label{
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            padding-bottom: 16px;
+        }
+
+        p {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            padding-bottom: 32px;
+        }
+    }
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .btn{
+        padding: 11px 45px;            
+        width: 100%;
+        margin-bottom: 24px;
+    }
+
+    hr{
+        background: var(--primary-brand) 0% 0% no-repeat padding-box;
+        height: 8px;
+        width: 78px;
+        margin: auto;
+        margin-top: 32px;
+    }
+}
+
+
+@include tablet {
+
+    .banner-image-wrapper {
+        flex-direction: unset;
+       
+        .banner__details {
+            padding-left: 40px;
+        }
+
+        img {           
+            height: 450px;           
+        }
+    
+        
+        .btn{
+            padding: 11px 45px;            
+            width: 227px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+
+        hr{
+            margin: unset;
+            margin-top: 56px;
+        }
+    }
+}

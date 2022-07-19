@@ -1,0 +1,149 @@
+@import '../../styles/base/mixins';
+
+.header-wrapper {
+    background: var(--primary-brand) 0% 0% no-repeat padding-box;
+
+    header {
+        padding: 18px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+
+        .__hamburger,
+        .header__cart {
+            width: 22px;
+            height: 24px;
+        }
+
+        .header__logo {
+            height: 18px;
+            margin: auto;
+        }
+
+        .cart__icon {
+            position: relative;
+        }
+
+        .cart--count {
+            background: var(--primary-m1) 0% 0% no-repeat padding-box;
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 12px/15px var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--white);
+            border-radius: 50%;              
+            padding: 7px;
+            position: absolute;
+            top: -17px;
+            right: -9px;
+        }
+    }
+
+    .nav__inks {
+        display: none;
+    }
+
+    .nav__inks__xs {
+        position: absolute;
+        background-color: white;
+        top: 64px;
+        width: 93%;
+        background: var(--white) 0% 0% no-repeat padding-box;
+        box-shadow: 0px 8px 16px var(--box-shadow1);
+        z-index: 2;
+
+        .__header,
+        .__footer {
+            background: var(--unnamed-color-FAFAFA) 0% 0% no-repeat padding-box;
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            border-bottom: 1px solid var(--border1);
+            display: flex;
+            justify-content: space-between;
+
+            p {
+                padding: 16px 24px;
+            }
+
+            button {
+                border: none;
+                background: no-repeat;
+            }
+        }
+
+        ul {
+            list-style: none;            
+            padding-left: 0;
+            margin-bottom: 40px;
+            padding: 0 24px;
+
+            li {
+                padding: 16px 0;
+                border-bottom: 1px solid var(--border1);
+            }
+
+            a {
+                font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+                letter-spacing: var(--unnamed-character-spacing-0);
+                color: var(--unnamed-color-172026);
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+
+@include desktop {
+
+    .header-wrapper {
+        header {
+            padding: 30px 0;
+            justify-content: flex-start;
+
+            .__hamburger {
+                display: none;
+            }
+
+            .header__logo {
+                margin: 0;
+            }            
+            .cart--count {               
+                top: -19px;
+                right: -9px;
+            }       
+           
+        }
+
+        .nav__inks {
+            padding: 0;
+            display: block;
+            flex-direction: row;
+            margin: auto;
+            text-align: center;
+
+            li {
+                list-style: outside none none;
+                display: inline-block;
+            }
+
+            a {
+                font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+                letter-spacing: var(--unnamed-character-spacing-0);
+                color: var(--white);
+                margin: 0 16px;
+                font-size: 16px;
+                text-decoration: none;
+            }
+
+            .active {
+                padding-bottom: 30px;
+                border-bottom: 4px solid var(--white);
+            }
+        }
+
+        .nav__inks__xs {
+            display: none;
+        }
+
+    }
+}

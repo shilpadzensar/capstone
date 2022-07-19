@@ -1,0 +1,80 @@
+@import '../../styles/base/mixins';
+
+.order {
+
+    @include heading;
+    @include underline;
+
+    .order__details {
+        h2 {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            padding-bottom: 24px;
+        }
+
+        h3 {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            padding-bottom: 8px;
+        }
+
+        p {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gray-d1);
+            width: 50%;
+            padding-bottom: 32px;
+        }
+
+
+        article {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            padding-top: 40px;
+
+            p {
+                width: 100%;
+            }
+        }
+    }
+
+    .adds__section {
+        display: none;
+    }
+
+
+
+}
+
+
+@include desktop {
+
+    .order {
+        .adds__section {
+            display: block;
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-36)/var(--unnamed-line-spacing-45) var(--unnamed-font-family-source-serif-pro);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--white);
+            text-align: center;
+            background: var(--primary-d1) 0% 0% no-repeat padding-box;
+            border: 1px solid var(--unnamed-color-D1D3D6);
+            border-radius: 2px;
+            min-height: 235px;
+            padding: 39px;
+        }
+
+        .social__links {
+            padding-top: 40px;
+
+            svg {
+                margin-right: 20px;
+                height: 35px;
+                width: 35px;            
+            }
+        }
+    }
+
+}
