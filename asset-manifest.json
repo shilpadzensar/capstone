@@ -1,0 +1,43 @@
+{
+  "files": {
+    "main.css": "/capstone/static/css/main.b27993cf.css",
+    "main.js": "/capstone/static/js/main.8927ee6f.js",
+    "static/media/model2.jpg": "/capstone/static/media/model2.8d129042b7d18f537cd4.jpg",
+    "static/media/fashion1.jpg": "/capstone/static/media/fashion1.aee83459f2ab1822f225.jpg",
+    "static/media/banner4.jpeg": "/capstone/static/media/banner4.00cf079ee1a93d9d4c5b.jpeg",
+    "static/media/banner3.jpeg": "/capstone/static/media/banner3.5890a830112f3aea17b9.jpeg",
+    "static/media/banner2.jpeg": "/capstone/static/media/banner2.0f4a188bde4a47e2074f.jpeg",
+    "static/media/banner1.jpeg": "/capstone/static/media/banner1.96bdd1d673c67e5c71c2.jpeg",
+    "static/media/banner.webp": "/capstone/static/media/banner.3ccffd32b7275689cbab.webp",
+    "static/media/sweat.png": "/capstone/static/media/sweat.be8a333ac8b292aee147.png",
+    "static/media/materials.png": "/capstone/static/media/materials.ac3c80afb98202d30c79.png",
+    "static/media/feather.png": "/capstone/static/media/feather.5324d928440f0fc00eb7.png",
+    "static/media/breathable.png": "/capstone/static/media/breathable.935733a5ee94b4b80793.png",
+    "static/media/sliders.svg": "/capstone/static/media/sliders.07a0e59562aded129aac7c8a5259c413.svg",
+    "static/media/logo.svg": "/capstone/static/media/logo.a019e17cb958b949ed2a427a4e3e5a9d.svg",
+    "static/media/arrow-down-grey.svg": "/capstone/static/media/arrow-down-grey.9a22787655b0b5aa0035b9a0c8539562.svg",
+    "static/media/trash-2.svg": "/capstone/static/media/trash-2.a3e697fde0ae7e80f40a3f3214ef433d.svg",
+    "static/media/instagram.svg": "/capstone/static/media/instagram.098205e681981cff2deaa43da7f8afa7.svg",
+    "static/media/hamburger.svg": "/capstone/static/media/hamburger.fabfd32f060f48238277e3ebb2fff397.svg",
+    "index.html": "/capstone/index.html",
+    "static/media/plus-circle.svg": "/capstone/static/media/plus-circle.f0e745c0b64b3e549aae.svg",
+    "static/media/shopping-bag.svg": "/capstone/static/media/shopping-bag.c1b615f1af44b5716ea3cd0230e00ab1.svg",
+    "static/media/arrow-up.svg": "/capstone/static/media/arrow-up.bffb5a388e9ce654e32b9665d1dbed6d.svg",
+    "static/media/map-pin.svg": "/capstone/static/media/map-pin.29e5f8c358e4aa7882e2db3c8cddcecf.svg",
+    "static/media/user.svg": "/capstone/static/media/user.91483d78eeba2c3d646d79ed77b449f4.svg",
+    "static/media/minus-circle.svg": "/capstone/static/media/minus-circle.79ebb44f1712ce51cbbe.svg",
+    "static/media/twitter.svg": "/capstone/static/media/twitter.3d9f31115be6b897b5d45c0aad4c1c1f.svg",
+    "static/media/arrow-down.svg": "/capstone/static/media/arrow-down.ad1e372bfba7126beaef93d275515815.svg",
+    "static/media/facebook.svg": "/capstone/static/media/facebook.b5b54c5572636785078aa70b8bdffe26.svg",
+    "static/media/heart.svg": "/capstone/static/media/heart.3b35352339d37da7c50b.svg",
+    "static/media/edit-2.svg": "/capstone/static/media/edit-2.d86fb5c57c99ad0d8312adf90283ac77.svg",
+    "static/media/edit-blue.svg": "/capstone/static/media/edit-blue.6b59e1b743abca759053bf719f598982.svg",
+    "static/media/chevron-down.svg": "/capstone/static/media/chevron-down.2ca19e6a662d7cc9d6aa38a2190ce1dc.svg",
+    "main.b27993cf.css.map": "/capstone/static/css/main.b27993cf.css.map",
+    "main.8927ee6f.js.map": "/capstone/static/js/main.8927ee6f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b27993cf.css",
+    "static/js/main.8927ee6f.js"
+  ]
+}
