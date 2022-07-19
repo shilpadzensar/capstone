@@ -29,7 +29,7 @@ function Header() {
                     <img className="__hamburger" id="hamburger" onClick={() => setToggle(!toggle)} aria-hidden="true"
                         data-state="show" src={Hamburger} ></img>
 
-                    <Link to="/capstone" aria-label="go to venia home page"><img src={Logo} className="header__logo" alt="venia logo" /></Link>
+                    <Link to="/capstone" aria-label="go to venia home page" alt="logo"><img src={Logo} className="header__logo" alt="venia logo" /></Link>
 
                     <ul className="nav__inks">
                         {navArr?.map((nav) => {

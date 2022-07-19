@@ -32,7 +32,7 @@ function BannerImage(prop) {
             </div>
 
             <div className="banner__image aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1">
-                <img src={Banner1} />
+                <img src={Banner1} alt="banner image" />
             </div>
         </div>
     );
