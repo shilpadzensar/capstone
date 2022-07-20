@@ -92,7 +92,7 @@ const ContactInformation = () => {
                 </div>
 
                 <div className={COL__6}>
-                    <Input label="Street Address2" {...register('address2', {required:{value: true}})} />
+                    <Input label="Street Address2" {...register('address2', {required:{value: false}})} />
                 </div>
 
                 <div className={COL__6}>

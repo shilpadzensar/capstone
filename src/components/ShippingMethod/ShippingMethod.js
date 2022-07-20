@@ -91,7 +91,7 @@ const ShippingMethod = () => {
     const DetailBlock = ({data}) => (
         <section className="shipping__detail">
             <div>
-                <span>Shipping Information</span>
+                <span>Shipping Method</span>
                 <Link to='' className="show__lg"><img src={Edit} alt="edit" />Edit</Link>
                 <Link to='' className="show__xs"><img src={Edit} alt="edit" /></Link>
             </div>

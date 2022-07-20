@@ -47,7 +47,7 @@ const PaymentInformation = () => {
                     <h3>3. Payment Information</h3>
                 </div>
 
-                <div className={`radio__wrapper ${COL__12}`}>
+                {/* <div className={`radio__wrapper ${COL__12}`}>
                     <input
                         {...register('paymentCard', { required: true })}
                         type="radio"
@@ -56,22 +56,22 @@ const PaymentInformation = () => {
                         id="credit-card"
                     />
                     <label htmlFor="paymentCard"> Credit Card</label>
+                </div> */}
+
+                <div className={COL__12}>
+                    <Input label="Name on Card" {...register('cname', {required:{value: true}})}  />
                 </div>
 
                 <div className={COL__12}>
-                    <Input label="Name on Card" {...register('cname', {required:{value: false}})}  />
+                    <Input label="Credit Card Number" {...register('cnumber', {required:{value: true}})}  />
                 </div>
 
                 <div className={COL__12}>
-                    <Input label="Credit Card Number" {...register('cnumber', {required:{value: false}})}  />
+                    <Input type="date" label="Expiration Date" {...register('exdate', {required:{value: true}})}  />
                 </div>
 
                 <div className={COL__12}>
-                    <Input label="Expiration Date" {...register('exdate', {required:{value: false}})}  />
-                </div>
-
-                <div className={COL__12}>
-                    <Input label="CVV" {...register('cvv', {required:{value: false}})}  />
+                    <Input label="CVV" {...register('cvv', {required:{value: true}})}  />
                 </div>
 
                 <div className={`checkbox__wrapper ${COL__12}`}>
@@ -79,7 +79,7 @@ const PaymentInformation = () => {
                     <label htmlFor="sameAddress" >Billing address same as shipping address</label>
                 </div>
 
-                <hr />
+                {/* <hr />
 
                 <div className={`radio__wrapper ${COL__12}`}>
                     <input
@@ -90,7 +90,7 @@ const PaymentInformation = () => {
                         id="pay-pal"
                     />
                     <label htmlFor="pay-pal"> PayPal</label>
-                </div>
+                </div> */}
 
                 <hr />
 
@@ -114,7 +114,7 @@ const PaymentInformation = () => {
                 <Link to='' className="show__xs"><img src={Edit} alt="edit" /></Link>
             </div>
             <section>
-                Credit Card Visa ending in {data.cnumber}
+                Credit Card Visa Number - {data.cnumber}
             </section>
         </section>
     );
