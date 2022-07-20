@@ -18,5 +18,7 @@ Application used 3rd party libraries like below:
 - **react-hook-form** => This packed is used for handling react form on checkout page.
 
 # Litehouse Report
+![image](https://user-images.githubusercontent.com/105743152/179908181-78642bf4-05d6-40c9-98d9-e40ac9835e8f.png)
+
 
 
