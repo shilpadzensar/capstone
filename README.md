@@ -1,5 +1,5 @@
 # Capstone
-This website is hosted at [Capstone Demo App](https://github.com/shilpadzensar/capstone/).
+This website is hosted at [Capstone Demo App](https://shilpadzensar.github.io/capstone/)
 
 # Technology stack
 - ReactJs - V18.0.0
