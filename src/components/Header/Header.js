@@ -21,7 +21,7 @@ function Header() {
     let [toggle, setToggle] = useState(false);
     let cart = useSelector((state) => state.cart.cart);
 
-   const [activeTab, setActiveTab] = useState('Women');   
+   const [activeTab, setActiveTab] = useState('All');   
 
     return (
         <div className="header-wrapper">
