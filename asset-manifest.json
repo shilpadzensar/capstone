@@ -1,9 +1,8 @@
 {
   "files": {
-    "main.css": "/capstone/static/css/main.3c792f97.css",
-    "main.js": "/capstone/static/js/main.92b6eb6d.js",
+    "main.css": "/capstone/static/css/main.b412d899.css",
+    "main.js": "/capstone/static/js/main.d664a260.js",
     "static/media/model2.jpg": "/capstone/static/media/model2.8d129042b7d18f537cd4.jpg",
-    "static/media/fashion1.jpg": "/capstone/static/media/fashion1.aee83459f2ab1822f225.jpg",
     "static/media/banner4.jpeg": "/capstone/static/media/banner4.00cf079ee1a93d9d4c5b.jpeg",
     "static/media/banner3.jpeg": "/capstone/static/media/banner3.5890a830112f3aea17b9.jpeg",
     "static/media/banner2.jpeg": "/capstone/static/media/banner2.0f4a188bde4a47e2074f.jpeg",
@@ -33,11 +32,11 @@
     "static/media/edit-2.svg": "/capstone/static/media/edit-2.d86fb5c57c99ad0d8312adf90283ac77.svg",
     "static/media/edit-blue.svg": "/capstone/static/media/edit-blue.6b59e1b743abca759053bf719f598982.svg",
     "static/media/chevron-down.svg": "/capstone/static/media/chevron-down.2ca19e6a662d7cc9d6aa38a2190ce1dc.svg",
-    "main.3c792f97.css.map": "/capstone/static/css/main.3c792f97.css.map",
-    "main.92b6eb6d.js.map": "/capstone/static/js/main.92b6eb6d.js.map"
+    "main.b412d899.css.map": "/capstone/static/css/main.b412d899.css.map",
+    "main.d664a260.js.map": "/capstone/static/js/main.d664a260.js.map"
   },
   "entrypoints": [
-    "static/css/main.3c792f97.css",
-    "static/js/main.92b6eb6d.js"
+    "static/css/main.b412d899.css",
+    "static/js/main.d664a260.js"
   ]
 }
