@@ -126,6 +126,8 @@
             word-break: break-all;
         }
     }
+
+    
 }
 
 
@@ -133,6 +135,10 @@
     .payment-information {
         .text__field input {
             width: 50%;
+        }
+
+        input[type=date]{
+            width: 100%;
         }
     }
 }

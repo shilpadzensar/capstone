@@ -10,7 +10,7 @@ import Edit from '../../assets/images/edit-blue.svg';
 
 
 const ShippingMethod = () => {
-
+    let [toggle, setToggle] = useState(true);
     const [shippingData, setShippingData] = useState({});
     let checkoutState = useSelector((state) => state.checkout.checkoutState);
     const dispatch = useDispatch();
@@ -31,6 +31,7 @@ const ShippingMethod = () => {
             paymentInfo: true
         };
 
+        setToggle(!toggle);
         setShippingData(data);
         dispatch(updateShippingInfo(data));
         dispatch(updateCheckoutState(updateState));
@@ -92,8 +93,8 @@ const ShippingMethod = () => {
         <section className="shipping__detail">
             <div>
                 <span>Shipping Method</span>
-                <Link to='' className="show__lg"><img src={Edit} alt="edit" />Edit</Link>
-                <Link to='' className="show__xs"><img src={Edit} alt="edit" /></Link>
+                <Link to='' className="show__lg" onClick={() => setToggle(!toggle)}><img src={Edit} alt="edit" />Edit</Link>
+                <Link to='' className="show__xs" onClick={() => setToggle(!toggle)}><img src={Edit} alt="edit" /></Link>
             </div>
 
             <section>{data.shippingMethod}</section>
@@ -109,7 +110,7 @@ const ShippingMethod = () => {
                     2. Shipping Method
                 </div>  
             :
-            shippingState ? <EditBlock /> : <DetailBlock data={shippingData}/>}             
+           (toggle || shippingState) ? <EditBlock /> : <DetailBlock data={shippingData}/>}             
 
         </div>
     );

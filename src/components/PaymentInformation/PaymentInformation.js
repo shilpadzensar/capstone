@@ -9,8 +9,11 @@ import Button from "../Button/Button";
 import Edit from '../../assets/images/edit-blue.svg';
 
 const COL__12 = "aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--1";
+
 const PaymentInformation = () => {
 
+    let [toggle, setToggle] = useState(true);
+    let [paymentMethod, setPaymentMethod] = useState(false);
     const [shippingData, setShippingData] = useState({});
     let checkoutState = useSelector((state) => state.checkout.checkoutState);
     const dispatch = useDispatch();
@@ -25,7 +28,6 @@ const PaymentInformation = () => {
     let paymentState = checkoutState.paymentInfo;
 
 
-
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const onSubmit = (data) => {
         let updateState = {
@@ -34,7 +36,7 @@ const PaymentInformation = () => {
             paymentInfo: false
         };
 
-
+        setToggle(!toggle);
         setShippingData(data);
         dispatch(updatePaymentInfo(data));
         dispatch(updateCheckoutState(updateState));
@@ -47,39 +49,49 @@ const PaymentInformation = () => {
                     <h3>3. Payment Information</h3>
                 </div>
 
-                {/* <div className={`radio__wrapper ${COL__12}`}>
+                <div className={`radio__wrapper ${COL__12}`}>
                     <input
+                        onClick={() => setPaymentMethod(!paymentMethod)}
                         {...register('paymentCard', { required: true })}
                         type="radio"
                         name="paymentCard"
                         value="Credit"
-                        id="credit-card"
+                        id="creditcard"
                     />
-                    <label htmlFor="paymentCard"> Credit Card</label>
-                </div> */}
-
-                <div className={COL__12}>
-                    <Input label="Name on Card" {...register('cname', {required:{value: true}})}  />
+                    <label htmlFor="creditcard"> Credit Card</label>
                 </div>
 
-                <div className={COL__12}>
-                    <Input label="Credit Card Number" {...register('cnumber', {required:{value: true}})}  />
-                </div>
+                {paymentMethod ?
+                    <div>
+                        <div className={COL__12}>
+                            <Input label="Name on Card" {...register('cname', { required: { value: true } })} />
+                        </div>
 
-                <div className={COL__12}>
-                    <Input type="date" label="Expiration Date" {...register('exdate', {required:{value: true}})}  />
-                </div>
+                        <div className={COL__12}>
+                            <Input label="Credit Card Number" {...register('cnumber', { required: { value: true } })} placeholder="#### #### #### ####"/>
+                        </div>
 
-                <div className={COL__12}>
-                    <Input label="CVV" {...register('cvv', {required:{value: true}})}  />
-                </div>
+                        <div className={COL__12}>
+                            <div className="aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
+                                <div className="aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--1">
+                                    <Input type="date" label="Expiration Date"
+                                    {...register('exdate', {required:{value: true, message: 'This is a required field.'}})} 
+                                     />
+                                </div>
+                                <div className="aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--1">
+                                    <Input label="CVV" {...register('cvv', { required: { value: true } })} />
+                                </div>
+                            </div>
+                        </div>
 
-                <div className={`checkbox__wrapper ${COL__12}`}>
-                    <input name="sameAddress" type="checkbox" {...register('sameAddress')} id="sameAddress" />
-                    <label htmlFor="sameAddress" >Billing address same as shipping address</label>
-                </div>
 
-                {/* <hr />
+                        <div className={`checkbox__wrapper ${COL__12}`}>
+                            <input name="sameAddress" type="checkbox" {...register('sameAddress')} id="sameAddress" />
+                            <label htmlFor="sameAddress" >Billing address same as shipping address</label>
+                        </div>
+                    </div>
+
+                    : ''}
 
                 <div className={`radio__wrapper ${COL__12}`}>
                     <input
@@ -87,13 +99,12 @@ const PaymentInformation = () => {
                         type="radio"
                         name="paymentCard"
                         value="PayPal"
-                        id="pay-pal"
+                        id="paypal"
                     />
-                    <label htmlFor="pay-pal"> PayPal</label>
-                </div> */}
+                    <label htmlFor="paypal"> PayPal</label>
+                </div>
 
                 <hr />
-
                 <div className="show__xs submit__button aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
                     <Button type="secondary" >Continue</Button>
                 </div>
@@ -106,12 +117,12 @@ const PaymentInformation = () => {
     );
 
 
-    const DetailBlock = ({data}) => (
+    const DetailBlock = ({ data }) => (
         <section className="payment__detail">
             <div>
                 <span>Payment Information</span>
-                <Link to='' className="show__lg"><img src={Edit} alt="edit" />Edit</Link>
-                <Link to='' className="show__xs"><img src={Edit} alt="edit" /></Link>
+                <Link to='' className="show__lg" onClick={() => setToggle(!toggle)}><img src={Edit} alt="edit" />Edit</Link>
+                <Link to='' className="show__xs" onClick={() => setToggle(!toggle)}><img src={Edit} alt="edit" /></Link>
             </div>
             <section>
                 Credit Card Visa Number - {data.cnumber}
@@ -121,11 +132,11 @@ const PaymentInformation = () => {
 
     return (
         <div className="payment-information">
-            {contactState || shippingState ? 
+            {contactState || shippingState ?
                 <div className="checkout__head">
                     3. Payment Information
                 </div>
-            : paymentState ? <EditBlock /> : <DetailBlock data={shippingData} />}
+                : toggle || paymentState ? <EditBlock /> : <DetailBlock data={shippingData} />}
         </div>
     );
 };

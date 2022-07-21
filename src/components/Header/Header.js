@@ -10,6 +10,7 @@ import {Link} from 'react-router-dom';
 import './Header.scss';
 
 const navArr = [
+    { id: 0, name: "All", link: "/product/category/all" },
     { id: 1, name: "Women", link: "/product/category/women" },
     { id: 2, name: "Men", link: "/product/category/men" },
     { id: 3, name: "Jewelery", link: "/product/category/jewelery" },

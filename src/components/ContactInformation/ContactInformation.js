@@ -17,6 +17,8 @@ import Edit from '../../assets/images/edit-blue.svg';
 const COL__12 = "aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--1";
 const COL__6 = "aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1";
 const ContactInformation = () => {
+
+    let [toggle, setToggle] = useState(true);
     const [contactData, setContactData] = useState({});
     let contactState = useSelector((state) => state.checkout.checkoutState.contactInfo);
     const dispatch = useDispatch();
@@ -33,8 +35,8 @@ const ContactInformation = () => {
             paymentInfo: false
         };
 
-        setContactData(data);
-             
+        setToggle(!toggle);
+        setContactData(data);             
         dispatch(updateContactInfo(data));
         dispatch(updateCheckoutState(checkoutState));
     };
@@ -115,8 +117,7 @@ const ContactInformation = () => {
                 <Button type="secondary" >Continue</Button>
             </div>
             <div className="show__lg submit__button aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
-                <Button type="secondary" >Continue to shopping method</Button>
-               
+                <Button type="secondary" >Continue to shopping method</Button>               
             </div>           
         </form>
     )
@@ -125,8 +126,8 @@ const ContactInformation = () => {
         <section className="shipping__detail">
             <div>
                 <span>Shipping Information</span>
-                <Link to='' className="show__lg"><img src={Edit} alt="edit" />Edit</Link>
-                <Link to='' className="show__xs"><img src={Edit} alt="edit" /></Link>
+                <Link to='' className="show__lg" onClick={() => setToggle(!toggle)}><img src={Edit} alt="edit" />Edit</Link>
+                <Link to='' className="show__xs" onClick={() => setToggle(!toggle)}><img src={Edit} alt="edit" /></Link>
             </div>
 
             <div className="aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
@@ -142,7 +143,7 @@ const ContactInformation = () => {
 
     return (
         <div className="contact-information">
-            {contactState ? <EditBlock /> : <DetailBlock data={contactData}/>}
+            {toggle || contactState ? <EditBlock /> : <DetailBlock data={contactData}/>}
         </div>
     );
 };
