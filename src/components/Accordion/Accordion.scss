@@ -22,7 +22,7 @@
     border-radius: 2px;
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    font-size: 16px;
 
     p {
       font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-21) var(--unnamed-font-family-muli);
@@ -53,6 +53,10 @@
 
   .accordion-wrapper {
     margin: 40px 20px 64px 0;
+
+    .accordion__btn {
+      font-size: 18px;
+    }
   }
 
 }

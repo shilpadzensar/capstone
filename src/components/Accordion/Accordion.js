@@ -1,6 +1,5 @@
 import React, {useEffect} from "react";
 import "./Accordion.scss";
-
 import { ReactComponent as Uparrow} from './../../assets/images/chevron-down.svg';
 
 const Accordion = (props) => {

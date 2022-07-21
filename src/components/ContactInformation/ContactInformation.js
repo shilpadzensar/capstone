@@ -22,7 +22,6 @@ const ContactInformation = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
     }, [contactState])
 
 
