@@ -21,7 +21,7 @@ const ProductItem = (prop) => {
       <article key={product.id} className="product__item aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--6">
         <section>
         <Link to={`/product/${product.id}`}>
-          <div>
+          <div className="img--hover--zoom">
             <img src={product.image} alt={product.title} />
           </div>
         </Link>

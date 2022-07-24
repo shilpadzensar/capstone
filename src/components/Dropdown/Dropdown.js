@@ -1,7 +1,7 @@
 import React from "react";
 import './Dropdown.scss';
 
-const Select = React.forwardRef(({name, label, list, ...rest }, ref) => (
+const Dropdown = React.forwardRef(({name, label, list, ...rest }, ref) => (
 
     <>
         <label className="select__label">{label}</label>
@@ -9,7 +9,7 @@ const Select = React.forwardRef(({name, label, list, ...rest }, ref) => (
             <select name={name} ref={ref} {...rest}>            
             {list?.map((data) => {
                     return (                    
-                    <option value={data.code} key={data.code} >{data.name}</option>
+                    <option value={data.name} key={data.code} >{data.name}</option>
                     );
                 })}
             </select>
@@ -17,4 +17,4 @@ const Select = React.forwardRef(({name, label, list, ...rest }, ref) => (
     </>
 ));
 
-export default Select;
+export default Dropdown;

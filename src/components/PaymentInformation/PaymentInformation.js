@@ -52,7 +52,8 @@ const PaymentInformation = () => {
                 <div className={`radio__wrapper ${COL__12}`}>
                     <input
                         onClick={() => setPaymentMethod(!paymentMethod)}
-                        {...register('paymentCard', { required: true })}
+                        {...register('paymentCard',
+                        { required: "This is a required field." })}
                         type="radio"
                         name="paymentCard"
                         value="Credit"
@@ -64,22 +65,53 @@ const PaymentInformation = () => {
                 {paymentMethod ?
                     <div>
                         <div className={COL__12}>
-                            <Input label="Name on Card" {...register('cname', { required: { value: true } })} />
+                            <Input label="Name on Card"
+                                {...register('cname', {
+                                    required: "This is a required field.",
+                                    pattern: {
+                                        value: /^[a-zA-Z ]{2,30}$/,
+                                        message: 'Please enter valid name.'
+                                    }
+                                })} 
+                                className={errors.cname && 'error--border'} />
+                            <p className="error--msg">{errors.cname && errors.cname.message}</p>
                         </div>
 
                         <div className={COL__12}>
-                            <Input label="Credit Card Number" {...register('cnumber', { required: { value: true } })} placeholder="#### #### #### ####"/>
+                            <Input label="Credit Card Number"
+                                {...register('cnumber', {
+                                    required: "This is a required field.",
+                                    pattern: {
+                                        value: /^\(?([0-9]{4})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/,
+                                        message: 'Enter Valid Card Number(16 Digits)'
+                                    }
+                                })}
+                                placeholder="#### #### #### ####" 
+                                className={errors.cnumber && 'error--border'} />
+                            <p className="error--msg">{errors.cnumber && errors.cnumber.message}</p>
                         </div>
 
                         <div className={COL__12}>
                             <div className="aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
                                 <div className="aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--1">
                                     <Input type="date" label="Expiration Date"
-                                    {...register('exdate', {required:{value: true, message: 'This is a required field.'}})} 
-                                     />
+                                        {...register('exdate',
+                                        { required: "This is a required field.",})}
+                                        className={errors.exdate && 'error--border'} 
+                                    />
+                                    <p className="error--msg">{errors.exdate && errors.exdate.message}</p>
                                 </div>
                                 <div className="aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--1">
-                                    <Input label="CVV" {...register('cvv', { required: { value: true } })} />
+                                    <Input label="CVV" {...register('cvv',
+                                        {
+                                            required: "This is a required field.",
+                                            pattern: {
+                                                value: /^\(?([0-9]{3})$/,
+                                                message: 'Please enter valid CVV(3 Digits).'
+                                            }
+                                        })} 
+                                        className={errors.cvv && 'error--border'} />
+                                    <p className="error--msg">{errors.cvv && errors.cvv.message}</p>
                                 </div>
                             </div>
                         </div>
@@ -95,6 +127,7 @@ const PaymentInformation = () => {
 
                 <div className={`radio__wrapper ${COL__12}`}>
                     <input
+                        onClick={() => setPaymentMethod(false)}
                         {...register('paymentCard', { required: true })}
                         type="radio"
                         name="paymentCard"

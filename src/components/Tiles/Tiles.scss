@@ -8,6 +8,10 @@
         height: 245px;
         box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px;
 
+
+        &:hover{
+            transform: scale(1.05);
+        }
     }
 
     .aem-GridColumn {
@@ -15,7 +19,7 @@
         padding: 7px;
     }
     
-    .tile {
+    .__tile {
         position: absolute;
         bottom: 4px;
         width: 100%;
@@ -42,6 +46,8 @@
         background: #1363DF 0% 0% no-repeat padding-box;
         height: 8px;
     }
+    
+    @include zoomImage();    
 }
 
 

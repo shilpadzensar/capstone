@@ -13,8 +13,6 @@
     }
 }
 
-
-
 @mixin toRem($property, $value) {
     #{$property}: ($value / 16) + rem;   
 }
@@ -51,8 +49,37 @@
         text-align: left;
         padding: 24px 0;
         color: var(--unnamed-color-72777F);
-        border-top: 1px solid #D1D3D6;
-        border-bottom: 1px solid #D1D3D6;
+        border-top: 1px solid var(--unnamed-color-D1D3D6);
+        border-bottom: 1px solid var(--unnamed-color-D1D3D6);
+    }
+}
+
+@mixin errorMsg() {
+    .error--msg {
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-14)/16px var(--unnamed-font-family-muli);
+        letter-spacing: var(--unnamed-character-spacing-0);
+        color: var(--negative-2);
+        text-align: left;
+        margin: 0;
+        min-height: 25px;
+    }
+
+    .error--border {
+        border: 2px solid var(--negative-2);
+    }
+}
+
+@mixin zoomImage() {
+    .img--hover--zoom {
+        overflow: hidden;
+    }    
+    
+    .img--hover--zoom img {
+        transition: transform .5s ease;
+    }
+    
+    .img--hover--zoom:hover img {
+        transform: scale(1.5);
     }
 }
 

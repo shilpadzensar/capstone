@@ -1,6 +1,6 @@
 @import '../../styles/base/mixins';
 
-.text__label{
+.text__label {
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
     letter-spacing: var(--unnamed-character-spacing-0);
     color: var(--gray-d2);
@@ -10,39 +10,40 @@
 .text__field {
 
     input {
-    background: var(--white) 0% 0% no-repeat padding-box;
-    border: 2px solid var(--gray-l2);
-    border-radius: 8px;
-    height: 44px;
-    width: 100%;
-    margin-bottom: 16px;
-    
-
-    &:active, &:focus {      
-        border: 2px solid var(--gray-d1);
-    }
-
-    &:hover {
-            
-    }
-
-    &:disabled{
-        background: #F3F3F4 0% 0% no-repeat padding-box;
-        border: 2px solid #D1D3D6;
-    }
-
-
-    &::-webkit-input-placeholder ,
-    &:-ms-input-placeholder,
-    &::placeholder {
-        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/19px var(--unnamed-font-family-muli);
+        font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
         letter-spacing: var(--unnamed-character-spacing-0);
-        color: var(--gray-m1);
-    }
+        color: var(--unnamed-color-172026);
+        text-align: left;
+        background: var(--white) 0% 0% no-repeat padding-box;
+        border: 2px solid var(--gray-l2);
+        border-radius: 8px;
+        height: 44px;
+        width: 100%;
+        margin-bottom: 6px;
+
+
+        &:active,
+        &:focus {
+            border: 2px solid var(--primary-d1);
+        }
+
+        &:disabled {
+            background: #F3F3F4 0% 0% no-repeat padding-box;
+            border: 2px solid #D1D3D6;
+        }
+
+
+        &::-webkit-input-placeholder,
+        &:-ms-input-placeholder,
+        &::placeholder {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/19px var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--gray-m1);
+        }
 
     }
 
-    .error{
+    .error {
         border: 2px solid #EC5B62;
     }
 }

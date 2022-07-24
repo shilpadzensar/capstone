@@ -59,7 +59,7 @@ const ShippingMethod = () => {
                     </div>
                     <div className="radio-wrapper aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--1">
                         <input
-                            {...register('shippingMethod', { required: true })}
+                            {...register('shippingMethod', { required: "This is a required field." })}
                             type="radio"
                             name="shippingMethod"
                             value="Express Delivery (2-5 business days via USPS) $17.95"
@@ -69,13 +69,14 @@ const ShippingMethod = () => {
                     </div>
                     <div className="radio-wrapper aem-GridColumn aem-GridColumn--default--12 aem-GridColumn--phone--1">
                         <input
-                            {...register('shippingMethod', { required: true })}
+                            {...register('shippingMethod', { required: "This is a required field." })}
                             type="radio"
                             name="shippingMethod"
                             value="Next Day Delivery (Next business days via FedEx) $53.61"
                             id="nextDay"
                         />
-                        <label htmlFor="nextDay">Next Day Delivery (Next business days via FedEx) $53.61</label>
+                        <label htmlFor="nextDay">Next Day Delivery (Next business days via FedEx) $53.61</label><br></br>
+                        {errors.shippingMethod && <p className="error--msg">{errors.shippingMethod.message}</p>} 
                     </div>
                 </section>
 

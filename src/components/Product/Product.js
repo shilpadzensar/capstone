@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState } from "react";
+import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { addSelectedProduct } from "../../redux/actions/productsActions";
-import './Product.scss';
 import ThumbnailCarousal from "./../ThumbnailCaraousal/ThumbnailCaraousal";
+import Quantity from "./../Quantity/Quantity";
+import StarRatings from 'react-star-ratings';
 
+import './Product.scss';
 import icon1 from "./images/sweat.png";
 import icon2 from "./images/breathable.png";
 import icon3 from "./images/feather.png";
@@ -13,15 +14,17 @@ import icon4 from "./images/materials.png";
 
 
 const Product = () => {
+
+
   const { productId } = useParams();
   // Fetch data from store
   let products = useSelector((state) => state.product.products);
 
-  var product = products.find(obj => {
+  let product = products.find(obj => {
     return obj.id == productId
   })
-  const { image, title, price, description } = product;
-
+  const { image, title, price, description} = product;
+ 
   //START Quantity Code
   let [num, setQuantity] = useState(1);
 
@@ -65,8 +68,16 @@ const Product = () => {
         </div>
         <div className="right__col aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1">
           <h1>{title}</h1>
-          <p className="__price">{price}</p>
-          <p className="__description">{description}</p>          
+          <p className="__price">${price}</p>
+          <StarRatings
+            rating={product.rating.rate}
+            starRatedColor="rgb(23, 32, 38)"           
+            numberOfStars={5}
+            name='rating'
+            starDimension="18px"
+            starSpacing="2px"
+          />({product.rating.count})
+          <p className="__description">{description}</p>
 
           <section>
             <p>Quantity</p>
@@ -75,6 +86,8 @@ const Product = () => {
               <input ref={textInput} type="text" className="--quantity" value={num} onChange={handleChange} />
               <span className="--plus" onClick={increaseQuantity}></span>
             </div>
+
+            <Quantity total="1" /> 
           </section>
 
           <section>

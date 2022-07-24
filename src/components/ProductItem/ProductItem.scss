@@ -7,6 +7,8 @@
     transform: scale3d(0.9, 0.9, 1);
     transition: all 0.7s;
 
+    @include zoomImage();
+    
     img {
         height: 130px;
         width: 100%;

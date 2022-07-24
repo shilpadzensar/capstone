@@ -11,17 +11,20 @@ const Quantity = (props) => {
     let increaseQuantity = () => {
         if (num < 10) {
         setQuantity(Number(num) + 1);
+        props.total(num);
         }
     };
 
     let decreaseQuantity = () => {
         if (num > 0) {
         setQuantity(num - 1);
+        props.total(num);
         }
     }
 
     let handleChange = (e) => {
         setQuantity(e.target.value);
+        props.total(num);
     }
 
     return ( 

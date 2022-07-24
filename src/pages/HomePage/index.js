@@ -42,7 +42,7 @@ class HomePage extends Component {
                      container="container"/>
                 </section>
 
-                    <Spacer color="#ffffff" mobileHeight="32px" desktopHeight="128px" />
+                    <Spacer color="#ffffff" mobileHeight="32px" desktopHeight="68px" />
 
             </main>
         );

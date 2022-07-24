@@ -1,4 +1,8 @@
+@import '../../styles/base/mixins';
+
 .thumbnail-caraousal-wrapper {
+   @include zoomImage();
+
     position: relative;
 
     .thumbnail-caraousal-column {

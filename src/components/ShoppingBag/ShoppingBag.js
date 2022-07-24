@@ -1,54 +1,30 @@
-import React,  {useEffect, useState} from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-import './ShoppingBag.scss';
 import Quantity from "./../Quantity/Quantity";
 import Accordion from "../Accordion/Accordion";
 import PricingSummary from "../PricingSummary/PricingSummary";
 import { removeSelectedProduct } from "../../redux/actions/productsActions";
 
-
+import './ShoppingBag.scss';
 import Edit from './images/edit-2.svg';
 import Trash from './images/trash-2.svg';
 import Heart from './images/heart.svg';
 
-const pricingTotal = (subTotal, coupan, giftcard, estimated)=> subTotal ? Math.round((subTotal - coupan - giftcard + estimated) * 100.0) / 100.0 : 0.00 ;
-
-
 const ShoppingBag = () => {
-    const [estimatedTotal , pricingSummary] = useState(0);  
-    const [subTotal , setSubTotal] = useState(0);
-    const [coupan , setCoupan] = useState(77.60);
-    const [giftcard , setGiftcard] = useState(100.00);
-    const [estimated , setEstimated] = useState(23.28);
-     
+  
     const dispatch = useDispatch();
-
     let cart = useSelector((state) => state.cart.cart);
 
     const removeCartItem = (id) => {
         dispatch(removeSelectedProduct(id));
-    }
+    }    
     
-    useEffect(() => {
-      
-        if(cart.length){
-            let totalAmount = 0;
-            cart.forEach((product)=>{
-                totalAmount = totalAmount + (product.price*product.quantity);                
-            });
-            setSubTotal(totalAmount);
-            setCoupan( totalAmount > 150 ? coupan : 0);                     
-            pricingSummary(pricingTotal(totalAmount, coupan, giftcard, estimated ));
-        }
-      }, [cart]);
-
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
         let path = '/checkout'; 
         navigate(path);
     }
-
    
     const RenderList = (product) => {      
 
@@ -78,7 +54,7 @@ const ShoppingBag = () => {
                                 <img src={Trash} alt="remove" /> Remove
                             </li>
                             <li>
-                                <img src={Heart} /> Save for later
+                                <img src={Heart} alt="add to whishlist" /> Save for later
                             </li>
                         </ul>
                     </div>

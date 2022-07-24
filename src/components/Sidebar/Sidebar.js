@@ -4,10 +4,10 @@ import Filter from '../Filter/Filter';
 
 
 const sizeArr = [
-    { id: 1, name: 'Jewellery'},
-    { id: 2, name: 'Electronics'},
-    { id: 3, name: 'Men\' Clothing'},
-    { id: 4, name: 'Women\' Clothing'}
+    { id: 1, name: 'Jewelery', redirect:"jewelery"},
+    { id: 2, name: 'Electronics', redirect:"electronics"},
+    { id: 3, name: 'Men\' Clothing',  redirect:"men"},
+    { id: 4, name: 'Women\' Clothing', redirect:"women",}
 ];
 
 

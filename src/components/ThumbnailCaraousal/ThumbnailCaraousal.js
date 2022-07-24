@@ -41,43 +41,43 @@ const ThumbnailCaraousal = (props) => {
         <div className="thumbnail-caraousal-wrapper aem-Grid aem-Grid--12">
             <div className="row show__lg aem-GridColumn aem-GridColumn--default--2">
                 <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(1)} alt="Product 1 img" />
+                    <img className="thumbnail" src={image} onClick={() => currentSlide(1)} alt="Product 1" />
                 </div>
                 <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(2)} alt="Product 2 img" />
+                    <img className="thumbnail" src={image} onClick={() => currentSlide(2)} alt="Product 2" />
                 </div>
                 <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(3)}  alt="Product 3 img" />
+                    <img className="thumbnail" src={image} onClick={() => currentSlide(3)}  alt="Product 3" />
                 </div>
                 <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(4)}  alt="Product 4 img" />
+                    <img className="thumbnail" src={image} onClick={() => currentSlide(4)}  alt="Product 4" />
                 </div>
                 <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(5)}  alt="Product 5 img" />
+                    <img className="thumbnail" src={image} onClick={() => currentSlide(5)}  alt="Product 5" />
                 </div>                
 
-                <a className="next-slide"  onClick={() => plusSlides(1)}><img src={downArrow} alt="Product 7 img" /></a>
+                <a className="next-slide"  onClick={() => plusSlides(1)}><img src={downArrow} alt="Product 7" /></a>
             </div>
 
             <div className="aem-GridColumn aem-GridColumn--default--10">
-                <div className="slide-image" style={{display:"block"}}>                    
-                    <img src={image} alt="big image" />
+                <div className="slide-image img--hover--zoom" style={{display:"block"}}>                    
+                    <img src={image} alt="large size product" />
                 </div>
 
-                <div className="slide-image">
-                    <img src={image}  alt="big image"/>
+                <div className="slide-image img--hover--zoom">
+                    <img src={image}  alt="large size product"/>
                 </div>
 
-                <div className="slide-image">
-                    <img src={image} alt="big image" />
+                <div className="slide-image img--hover--zoom">
+                    <img src={image} alt="large size product" />
                 </div>
 
-                <div className="slide-image">
-                    <img src={image} alt="big image" />
+                <div className="slide-image img--hover--zoom">
+                    <img src={image} alt="large size product" />
                 </div>
 
-                <div className="slide-image">
-                    <img src={image} alt="big image" />
+                <div className="slide-image img--hover--zoom">
+                    <img src={image} alt="large size product" />
                 </div>               
 
             </div>
