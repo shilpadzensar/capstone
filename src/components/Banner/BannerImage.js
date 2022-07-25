@@ -9,7 +9,7 @@ function BannerImage(prop) {
 
     let navigate = useNavigate(); 
     const routeChange = () =>{ 
-        let path = '/product'; 
+        let path = '/product/category/all'; 
         navigate(path);
     }
 

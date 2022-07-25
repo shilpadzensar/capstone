@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "react-js-pagination";
-import { setProducts, setFilter} from "../../redux/actions/productsActions";
+import { setProducts } from "../../redux/actions/productsActions";
 import ProductItem from "./../ProductItem/ProductItem";
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './ProductList.scss';
@@ -41,6 +41,9 @@ const ProductList = () => {
                 console.log("Err: ", err);
             });              
        
+            if (category == 'all'){  
+                setFilterdata(response.data);  
+            }
         dispatch(setProducts(response.data));
     };
 
@@ -58,7 +61,7 @@ const ProductList = () => {
                 return p;});            
         }else {             
             setFilterdata(products);      
-        }      
+        }
         
     }, [category, filter]);
 

@@ -20,7 +20,17 @@ const navArr = [
 function Header() {
     let [toggle, setToggle] = useState(false);
     let cart = useSelector((state) => state.cart.cart);
+    let cartCount = 0;
+    let cartLength = Number(
+        cart
+        .map((r) => r.quantity)
+        .reduce((p, c) => {
+            cartCount = cartCount + c;
+            return cartCount;
+        }, 0)
+    );
 
+    
    const [activeTab, setActiveTab] = useState('All');   
 
     return (
@@ -70,11 +80,9 @@ function Header() {
                    
                     <Link to="/cart" alt="go to cart" className='cart__icon'>
                         <img className="header__cart" src={Cart} alt="click here to go to cart" />
-                        {cart.length > 0 && <span className="cart--count">{cart.length}</span>}                        
+                        {cartLength > 0 && <span className="cart--count">{cartLength}</span>}                       
 
                     </Link>
-                    
-
                 </header>
             </div>
         </div>
