@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/capstone/static/css/main.1fec7903.css",
-    "main.js": "/capstone/static/js/main.fca200c3.js",
+    "main.css": "/capstone/static/css/main.3dc528c8.css",
+    "main.js": "/capstone/static/js/main.6f125b6b.js",
     "static/media/model2.jpg": "/capstone/static/media/model2.8d129042b7d18f537cd4.jpg",
     "static/media/banner4.jpeg": "/capstone/static/media/banner4.00cf079ee1a93d9d4c5b.jpeg",
     "static/media/banner3.jpeg": "/capstone/static/media/banner3.5890a830112f3aea17b9.jpeg",
@@ -19,6 +19,7 @@
     "static/media/instagram.svg": "/capstone/static/media/instagram.098205e681981cff2deaa43da7f8afa7.svg",
     "static/media/hamburger.svg": "/capstone/static/media/hamburger.fabfd32f060f48238277e3ebb2fff397.svg",
     "index.html": "/capstone/index.html",
+    "static/media/more-horizontal.svg": "/capstone/static/media/more-horizontal.2ea01748eed974013c1a1108ed9c5969.svg",
     "static/media/plus-circle.svg": "/capstone/static/media/plus-circle.f0e745c0b64b3e549aae.svg",
     "static/media/shopping-bag.svg": "/capstone/static/media/shopping-bag.c1b615f1af44b5716ea3cd0230e00ab1.svg",
     "static/media/arrow-up.svg": "/capstone/static/media/arrow-up.bffb5a388e9ce654e32b9665d1dbed6d.svg",
@@ -34,11 +35,12 @@
     "static/media/edit-2.svg": "/capstone/static/media/edit-2.d86fb5c57c99ad0d8312adf90283ac77.svg",
     "static/media/edit-blue.svg": "/capstone/static/media/edit-blue.6b59e1b743abca759053bf719f598982.svg",
     "static/media/chevron-down.svg": "/capstone/static/media/chevron-down.2ca19e6a662d7cc9d6aa38a2190ce1dc.svg",
-    "main.1fec7903.css.map": "/capstone/static/css/main.1fec7903.css.map",
-    "main.fca200c3.js.map": "/capstone/static/js/main.fca200c3.js.map"
+    "static/media/chevron-up.svg": "/capstone/static/media/chevron-up.872d3436f435313d4a2e23f43b4d667f.svg",
+    "main.3dc528c8.css.map": "/capstone/static/css/main.3dc528c8.css.map",
+    "main.6f125b6b.js.map": "/capstone/static/js/main.6f125b6b.js.map"
   },
   "entrypoints": [
-    "static/css/main.1fec7903.css",
-    "static/js/main.fca200c3.js"
+    "static/css/main.3dc528c8.css",
+    "static/js/main.6f125b6b.js"
   ]
 }
