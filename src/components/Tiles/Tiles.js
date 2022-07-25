@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 import "./Tiles.scss";
 
 const CATEGORIES = [
-    { id:1, label: "Shop Women", redirect:"women", description: "Lorem ipsum dolor sit amet", altText: "shop Women", img: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg" },
-    { id:2, label: "Shop Men",  redirect:"men", description: "Lorem ipsum dolor sit amet", altText: "shop Men", img: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" },
-    { id:3, label: "Jewelery", redirect:"jewelery", description: "Lorem ipsum dolor sit amet", altText: "Jewellery", img: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" },
-    { id:4, label: "Electronics", redirect:"electronics", description: "Lorem ipsum dolor sit amet", altText: "Electronics", img: "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg" },
+    { id:1, label: "Shop Women", redirect:"women", description: "Newly Launched Up to 50% off", altText: "shop Women", img: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg" },
+    { id:2, label: "Shop Men",  redirect:"men", description: "Premium casuals Up to 60% off", altText: "shop Men", img: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg" },
+    { id:3, label: "Jewelery", redirect:"jewelery", description: "Buy 2 or get more EXTRA", altText: "Jewellery", img: "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg" },
+    { id:4, label: "Electronics", redirect:"electronics", description: "Mega Electronics Days", altText: "Electronics", img: "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg" },
 ]
 
 function Tiles() {
