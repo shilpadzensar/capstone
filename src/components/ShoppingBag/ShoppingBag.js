@@ -29,8 +29,8 @@ const ShoppingBag = () => {
     const RenderList = (product) => {      
 
         return (
-            <section>
-                <div key={product.id} className="aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
+            <section key={product.id}>
+                <div className="aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
                     <div className="prod__details aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1">
                         <img src={product.image} alt={product.title}></img>
                         <div>

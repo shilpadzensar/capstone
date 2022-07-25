@@ -16,14 +16,14 @@ const PricingSummary = (prop) => {
     const estimated = 23.28;
    
     let cart = useSelector((state) => state.cart.cart);
-   
+
     useEffect(() => {
       
         if(cart.length){
             let totalAmount = 0;
             cart.forEach((product)=>{
-                totalAmount = totalAmount + (product.price*product.quantity);                
-            });
+                totalAmount = totalAmount + (product.price*product.quantity);    
+            });        
             setSubTotal(totalAmount);
             setCoupan( totalAmount > 150 ? coupan : 0);                     
             pricingSummary(pricingTotal(totalAmount, coupan, giftcard, estimated ));

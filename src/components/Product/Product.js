@@ -3,7 +3,6 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addSelectedProduct } from "../../redux/actions/productsActions";
 import ThumbnailCarousal from "./../ThumbnailCaraousal/ThumbnailCaraousal";
-import Quantity from "./../Quantity/Quantity";
 import StarRatings from 'react-star-ratings';
 
 import './Product.scss';
@@ -86,8 +85,6 @@ const Product = () => {
               <input ref={textInput} type="text" className="--quantity" value={num} onChange={handleChange} />
               <span className="--plus" onClick={increaseQuantity}></span>
             </div>
-
-            <Quantity total="1" /> 
           </section>
 
           <section>

@@ -62,8 +62,8 @@ function BannerCaraousal() {
 
                 {BANNERS?.map((data) => {
                     return (
-                        <SwiperSlide>
-                            <div key={data.id} className="aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
+                        <SwiperSlide key={data.id}>
+                            <div className="aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
                                 <div className="banner__details aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1">
                                     <h2>{data.label}</h2>
                                     <p>{data.description}</p>

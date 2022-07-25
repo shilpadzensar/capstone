@@ -3,11 +3,11 @@ import './Sidebar.scss';
 import Filter from '../Filter/Filter';
 
 
-const sizeArr = [
-    { id: 1, name: 'Jewelery', redirect:"jewelery"},
-    { id: 2, name: 'Electronics', redirect:"electronics"},
-    { id: 3, name: 'Men\' Clothing',  redirect:"men"},
-    { id: 4, name: 'Women\' Clothing', redirect:"women",}
+const CATEGORIES = [
+    { id:"jewelery", name: 'Jewelery'},
+    { id:"electronics", name: 'Electronics'},
+    { id:"men", name: 'Men\' Clothing'},
+    { id:"women", name: 'Women\' Clothing'}
 ];
 
 
@@ -16,7 +16,7 @@ const Sidebar = () => {
         <section className="sidebar">
                 <h4>Filters</h4>
 
-                <Filter filterArray={sizeArr} title="Categories"/>
+                <Filter filterArray={CATEGORIES} title="Categories"/>
 
             </section>
     );    

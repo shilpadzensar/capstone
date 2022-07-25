@@ -3,7 +3,8 @@ import { cloneDeep } from "lodash";
 
 const intialState = {
   products: [],
-  product: []
+  product: [],
+  filter: []
 };
 
 const intialCartState = {
@@ -31,6 +32,8 @@ export const productsReducer = (state = intialState, action) => {
       return { ...state, products: action.payload };
     case ActionTypes.SELECTED_PRODUCT:
       return { ...state, product: action.payload };
+    case ActionTypes.SET_FILTER:
+      return { ...state, filter: action.payload };
     default:
       return state;
   }

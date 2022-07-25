@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "react-js-pagination";
-import { setProducts } from "../../redux/actions/productsActions";
+import { setProducts, setFilter} from "../../redux/actions/productsActions";
 import ProductItem from "./../ProductItem/ProductItem";
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import './ProductList.scss';
@@ -18,13 +18,14 @@ const CATEGORIES = {"men": "men's clothing",
 
 
 const ProductList = () => {
-    const products = useSelector((state) => state.product.products);
     const dispatch = useDispatch();
+    const products = useSelector((state) => state.product.products);
+    const filter = useSelector((state) => state.product.filter);     
     const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
-    const [filterdata, setFilterdata] = useState(useSelector((state) => state.product.products));
+    const [filterdata, setFilterdata] = useState(products);
     const postsPerPage = 9;
-
+   
     const { category } = useParams();
  
     const fetchProducts = async () => {
@@ -38,9 +39,8 @@ const ProductList = () => {
             })
             .catch((err) => {
                 console.log("Err: ", err);
-            });
-              
-        setFilterdata(response.data);
+            });              
+       
         dispatch(setProducts(response.data));
     };
 
@@ -51,12 +51,16 @@ const ProductList = () => {
 
     useEffect(() => {
         if (category != 'all'){   
-            let filterCat = products.filter(cat => cat.category === CATEGORIES[category])            
-            setFilterdata(filterCat);
-        }else {           
-            setFilterdata(products);
-        }
-    }, [category]);
+         
+            let filterCat = products.filter(cat => cat.category === CATEGORIES[filter ? filter : category])            
+            setFilterdata((p)=>{
+                p = [...filterCat];
+                return p;});            
+        }else {             
+            setFilterdata(products);      
+        }      
+        
+    }, [category, filter]);
 
 
     const handlePageChange = (pageNumber) => {

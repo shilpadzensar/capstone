@@ -27,3 +27,12 @@ export const removeSelectedProduct = (payload) => {
     payload
   };
 };
+
+
+export const setFilter = (filter) => {
+  return {
+    type: ActionTypes.SET_FILTER,
+    payload: filter,
+  };
+};
+
