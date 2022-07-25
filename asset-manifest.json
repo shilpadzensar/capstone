@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/capstone/static/css/main.a7bc1fe0.css",
-    "main.js": "/capstone/static/js/main.c688f85b.js",
+    "main.css": "/capstone/static/css/main.1fec7903.css",
+    "main.js": "/capstone/static/js/main.fca200c3.js",
     "static/media/model2.jpg": "/capstone/static/media/model2.8d129042b7d18f537cd4.jpg",
     "static/media/banner4.jpeg": "/capstone/static/media/banner4.00cf079ee1a93d9d4c5b.jpeg",
     "static/media/banner3.jpeg": "/capstone/static/media/banner3.5890a830112f3aea17b9.jpeg",
@@ -27,16 +27,18 @@
     "static/media/minus-circle.svg": "/capstone/static/media/minus-circle.79ebb44f1712ce51cbbe.svg",
     "static/media/twitter.svg": "/capstone/static/media/twitter.3d9f31115be6b897b5d45c0aad4c1c1f.svg",
     "static/media/arrow-down.svg": "/capstone/static/media/arrow-down.ad1e372bfba7126beaef93d275515815.svg",
+    "static/media/black-like.svg": "/capstone/static/media/black-like.96dfbac875669a4ddd1f65c8b001ce7b.svg",
+    "static/media/red-like.svg": "/capstone/static/media/red-like.153243226b92d5db1a14aaf6a9f2df5c.svg",
     "static/media/facebook.svg": "/capstone/static/media/facebook.b5b54c5572636785078aa70b8bdffe26.svg",
     "static/media/heart.svg": "/capstone/static/media/heart.3b35352339d37da7c50b.svg",
     "static/media/edit-2.svg": "/capstone/static/media/edit-2.d86fb5c57c99ad0d8312adf90283ac77.svg",
     "static/media/edit-blue.svg": "/capstone/static/media/edit-blue.6b59e1b743abca759053bf719f598982.svg",
     "static/media/chevron-down.svg": "/capstone/static/media/chevron-down.2ca19e6a662d7cc9d6aa38a2190ce1dc.svg",
-    "main.a7bc1fe0.css.map": "/capstone/static/css/main.a7bc1fe0.css.map",
-    "main.c688f85b.js.map": "/capstone/static/js/main.c688f85b.js.map"
+    "main.1fec7903.css.map": "/capstone/static/css/main.1fec7903.css.map",
+    "main.fca200c3.js.map": "/capstone/static/js/main.fca200c3.js.map"
   },
   "entrypoints": [
-    "static/css/main.a7bc1fe0.css",
-    "static/js/main.c688f85b.js"
+    "static/css/main.1fec7903.css",
+    "static/js/main.fca200c3.js"
   ]
 }
