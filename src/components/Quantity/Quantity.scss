@@ -1,3 +1,5 @@
+@import '../../styles/base/mixins';
+
 .quantity__wrapper {
     padding-bottom: 40px;
 
@@ -26,9 +28,21 @@
         border: 2px solid var(--gray-m1);
         border-radius: 8px;
         opacity: 1;
-        width:87px;
-        height: 40px;
+        width: 87px;
+        height: 30px;
         margin: 0 12px;
         text-align: center;
     }
+}
+
+
+@include tablet {
+
+    .quantity__wrapper {
+
+        .--quantity {
+            height: 40px;
+        }
+    }
+
 }

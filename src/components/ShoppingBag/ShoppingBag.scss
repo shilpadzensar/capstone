@@ -4,74 +4,91 @@
     @include heading;
     @include underline;
 
-    .left__col {
-        section {
 
-            .prod__details {
-                display: flex;
+    .prod__details {
+        display: flex;
 
-                div {
-                    width: 100%;
-                    padding-left: 16px;
-                }
+        div {
+            width: 100%;
+            padding-left: 16px;
+        }
 
-                img {
-                    width: 166px;
-                    height: 199px;
-                    box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px;
-                    cursor: pointer;
-                    transform: scale3d(0.9, 0.9, 1);
-                    transition: all 0.7s;                
-                }
+        img {
+            width: 116px;
+            cursor: pointer;
+        }
 
-                h5 {
-                    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
-                    letter-spacing: var(--unnamed-character-spacing-0);
-                    color: var(--unnamed-color-172026);
-                    text-align: left;
-                    font-size: 18px;
-                }
+        h5 {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            text-align: left;
+            font-size: 16px;
+        }
 
-                p {
-                    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
-                    letter-spacing: var(--unnamed-character-spacing-0);
-                    color: var(--unnamed-color-172026);
-                }
+        p {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+        }
 
+        .icon__list {
+            text-align: left;
+            list-style: none;
+            padding: 0;
+            li{
+                margin-bottom: 5px;
             }
-
-            .prod__quantity {
-                display: flex;
-
-                section {
-                    padding-top: 16px;
-                }
-
-                li {
-                    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 12px/14px var(--unnamed-font-family-muli);
-                    letter-spacing: var(--unnamed-character-spacing-0);
+    
+            a {
+                text-decoration: none;
+                color: var(--unnamed-color-172026);
+    
+                &:hover {
                     color: var(--unnamed-color-172026);
-                    text-align: left;
-                    margin-bottom: 16px;
-                    list-style: none;
-
-                    a {
-                        text-decoration: none;
-                        color: var(--unnamed-color-172026);
-                        &:hover{
-                            color: var(--unnamed-color-172026);
-                        }
-
-                    }
-
-                    img {
-                        vertical-align: bottom;
-                        margin-right: 5px;
-                    }
                 }
+            }
+    
+            img {
+                vertical-align: bottom;
+                margin-bottom: 5px;
+                width: 16px;
             }
         }
+
     }
+
+    .prod__quantity {
+        display: flex;
+
+        section {
+            padding-top: 16px;
+        }
+
+        li {
+            font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) 12px/14px var(--unnamed-font-family-muli);
+            letter-spacing: var(--unnamed-character-spacing-0);
+            color: var(--unnamed-color-172026);
+            text-align: left;
+            margin-bottom: 16px;
+            list-style: none;
+
+            a {
+                text-decoration: none;
+                color: var(--unnamed-color-172026);
+
+                &:hover {
+                    color: var(--unnamed-color-172026);
+                }
+
+            }
+
+            img {
+                vertical-align: bottom;
+                margin-right: 5px;
+            }
+        }
+    }    
 
     .right__col {
         background: var(--white) 0% 0% no-repeat padding-box;
@@ -117,7 +134,7 @@
 
         }
 
-        .primary__paypal__btn{
+        .primary__paypal__btn {
             background-image: url('./images/pay-pal.png');
             border: none;
             background-repeat: no-repeat;
@@ -145,16 +162,20 @@
 
 .no__record {
     font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-600) var(--unnamed-font-size-48)/var(--unnamed-line-spacing-45) var(--unnamed-font-family-source-serif-pro);
-        letter-spacing: var(--unnamed-character-spacing-0);
-        color: var(--unnamed-color-172026);
-        text-align: center;
-        padding-bottom: 50px;
-        font-size: 36px;
+    letter-spacing: var(--unnamed-character-spacing-0);
+    color: var(--unnamed-color-172026);
+    text-align: center;
+    padding-bottom: 50px;
+    font-size: 36px;
 }
 
 
 
-@include desktop {
+@include tablet {
+    .show__xs {
+        display: none;
+    }
+
     .shoppingbag {
         h1 {
             font-size: 48px;
@@ -162,23 +183,24 @@
 
         }
 
+        .prod__details {
+            img {
+                width: 166px;
+            }
 
-        .left__col {
-            section {
-                .prod__details {
-                    h5 {
-                        font-size: 20px;
-                    }
-                }
-
-                .prod__quantity {
-                    section {
-                        padding-top: 16px;
-                        padding-left: 25px;
-                    }
-                }
+            h5 {
+                font-size: 18px;
             }
         }
+
+        .prod__quantity {
+            section {
+                padding-top: 16px;
+                padding-left: 25px;
+            }
+        }
+
+
     }
 
 }

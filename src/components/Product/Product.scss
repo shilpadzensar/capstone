@@ -34,46 +34,6 @@
                 padding: 16px 0;
             }
 
-            .color__section {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr;
-                grid-gap: 1px;
-                grid-row-gap: 8px;
-
-                div {
-                    width: 64px;
-                    height: 40px;
-                    border-radius: 6px;
-                }
-
-                .black-color {
-                    background: var(--color-black) 0% 0% no-repeat padding-box;
-                }
-
-                .teal-green {
-                    background: var(--color-teal-green) 0% 0% no-repeat padding-box;
-                }
-
-                .mustard-color {
-                    background: var(--color-mustard) 0% 0% no-repeat padding-box;
-                }
-
-                .blue-color {
-                    background: var(--color-blue) 0% 0% no-repeat padding-box;
-                }
-            }
-
-            .size {
-                div {
-                    font: var(--unnamed-font-style-normal) normal 600 var(--unnamed-font-size-16)/var(--unnamed-line-spacing-20) var(--unnamed-font-family-muli);
-                    text-align: center;
-                    letter-spacing: 0.32px;
-                    border: 2px solid var(--gray-m1);
-                    padding: 7px;
-                    color: #545D63;
-                }
-            }
-
 
             .quantity__wrapper {
                 padding-bottom: 40px;

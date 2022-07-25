@@ -39,7 +39,7 @@ const ThumbnailCaraousal = (props) => {
 
     return (        
         <div className="thumbnail-caraousal-wrapper aem-Grid aem-Grid--12">
-            <div className="row show__lg aem-GridColumn aem-GridColumn--default--2">
+            <div className="row show__lg aem-GridColumn aem-GridColumn--default--2 aem-GridColumn--phone--12">
                 <div className="thumbnail-caraousal-column">
                     <img className="thumbnail" src={image} onClick={() => currentSlide(1)} alt="Product 1" />
                 </div>
@@ -59,7 +59,7 @@ const ThumbnailCaraousal = (props) => {
                 <a className="next-slide"  onClick={() => plusSlides(1)}><img src={downArrow} alt="Product 7" /></a>
             </div>
 
-            <div className="aem-GridColumn aem-GridColumn--default--10">
+            <div className="aem-GridColumn aem-GridColumn--default--10 aem-GridColumn--phone--12">
                 <div className="slide-image img--hover--zoom" style={{display:"block"}}>                    
                     <img src={image} alt="large size product" />
                 </div>

@@ -1,63 +1,67 @@
 @import '../../styles/base/mixins';
 
-
 .accordion-wrapper {
-  border: 1px solid #D1D3D6;
-  border-radius: 2px;
-  margin: 24px 0;
+  margin-bottom: 24px;
+}
 
-  .accordion__btn {
-    width: 100%;
-    border: none;
-    outline: none;
-    text-align: left;
-    padding: 15px 20px;
-    cursor: pointer;
-    transition: background-color 0.2s linear;
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-20)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-172026);
-    background-color: var(--white);
-    border-bottom: 1px solid var(--unnamed-color-D1D3D6);
-    border-radius: 2px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
+.accordion__title {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  border: 1px solid #ddd;
+  padding: 2% 2%;
+}
 
-    p {
-      font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-21) var(--unnamed-font-family-muli);
-      letter-spacing: var(--unnamed-character-spacing-0);
-      color: var(--unnamed-color-172026);
-      padding-right: 5px;
-      margin-left: 80px;
-    }
-  }
+.accordion__subtitle {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-17-5) var(--unnamed-font-family-muli);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: #72777F;
+}
 
+.accordion__content {
+  display: flex;
+  justify-content: flex-end;
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-17-5) var(--unnamed-font-family-muli);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
-  .accordion__content {
-    font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-14)/var(--unnamed-line-spacing-21) var(--unnamed-font-family-muli);
-    letter-spacing: var(--unnamed-character-spacing-0);
-    color: var(--unnamed-color-172026);
-    background-color: white;
-    border-left: 1px solid whitesmoke;
-    border-right: 1px solid whitesmoke;
-    padding: 0 20px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-in-out;    
-  }
+.text__right {
+  text-align: right;
+}
+
+.accordion__item {
+  padding: 0;
+}
+
+.cart__accordian__title {
+  font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-25) var(--unnamed-font-family-muli);
+  letter-spacing: var(--unnamed-character-spacing-0);
+  color: var(--unnamed-color-172026);
+  text-align: left;
+  letter-spacing: 0px;
+  opacity: 1;
 
 }
 
-
-@include desktop {
-
-  .accordion-wrapper {
-    margin: 40px 20px 64px 0;
-
-    .accordion__btn {
-      font-size: 18px;
-    }
+@include tablet {
+  .accordion-wrapper {   
+    margin: 24px 16px 100px;
   }
+  
+  .accordion__title {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    border: 1px solid #ddd;
+    padding: 2% 2%;
+  }
+
+  .accordion__content {
+    display: flex;   
+    justify-content: flex-end;
+    padding: 10px;
+
+  }
+
 
 }

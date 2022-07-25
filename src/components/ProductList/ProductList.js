@@ -27,7 +27,7 @@ const ProductList = () => {
     const postsPerPage = 9;
    
     const { category } = useParams();
- 
+    
     const fetchProducts = async () => {
         setIsLoading(true);
               
@@ -49,11 +49,10 @@ const ProductList = () => {
 
     useEffect(() => {
         fetchProducts();
-
     }, []);
 
     useEffect(() => {
-        if (category != 'all'){   
+        if (category != 'all'){  
          
             let filterCat = products.filter(cat => cat.category === CATEGORIES[filter ? filter : category])            
             setFilterdata((p)=>{
@@ -69,6 +68,7 @@ const ProductList = () => {
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
+    
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentProducts = filterdata.slice(indexOfFirstPost, indexOfLastPost);
@@ -97,7 +97,7 @@ const ProductList = () => {
                         <img className="sort-result" src={downArrow} />Sort Results</a>
                 </div>
 
-                {products.length > 0 && <div>{products.length} Results</div>}
+                {currentProducts.length > 0 && <div>{currentProducts.length} Results</div>}
             </div>
 
             <section className="aem-Grid aem-Grid--12">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
 import Quantity from "./../Quantity/Quantity";
@@ -9,15 +9,17 @@ import { removeSelectedProduct, setWishlist } from "../../redux/actions/products
 import './ShoppingBag.scss';
 import Edit from './images/edit-2.svg';
 import Trash from './images/trash-2.svg';
-import Heart from './images/heart.svg';
 import { ReactComponent as RedLike } from './../../assets/images/red-like.svg';
 import { ReactComponent as BlackLike } from './../../assets/images/black-like.svg';
+import { ReactComponent as MoreIcon } from './../../assets/images/more-horizontal.svg';
+import accordionData from "../../utils/list";
 
 const ShoppingBag = () => {
 
     const dispatch = useDispatch();
     let cart = useSelector((state) => state.cart.cart);
     const wishlistProducts = useSelector((state) => state.wishlist.wishlist);
+    const [showActionMenu, toggleActionMenu] = useState(false);
 
     const removeCartItem = (id) => {
         dispatch(removeSelectedProduct(id));
@@ -33,6 +35,7 @@ const ShoppingBag = () => {
         navigate(path);
     }
 
+
     const RenderList = (product) => {
 
         return (
@@ -46,12 +49,31 @@ const ShoppingBag = () => {
                             <p>Color: Storm</p>
                             <p>Price: {product.price}</p>
                         </div>
+                        <span className="show__xs">
+                            {showActionMenu ?
+                                <ul className="show__xs icon__list">
+                                    <li>
+                                        <Link to={`/product/${product.id}`} ><img src={Edit} alt="edit" /></Link>
+                                    </li>
+                                    <li onClick={() => removeCartItem(product.id)}>
+                                        <img src={Trash} alt="remove" />
+                                    </li>
+                                    <li>
+                                        {wishlistProducts?.includes(product.id)
+                                            ? < RedLike onClick={() => onClickHandler(product.id)} />
+                                            : <BlackLike onClick={() => onClickHandler(product.id)} />}
+                                    </li>
+                                </ul>
+                                : 
+                                <MoreIcon onClick={() => toggleActionMenu(!showActionMenu)} />}
+                        </span>
                     </div>
 
                     <div className="prod__quantity aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1">
                         <section>
                             <Quantity total={product.quantity} />
                         </section>
+
 
                         <ul className="show__lg">
                             <li>
@@ -84,7 +106,11 @@ const ShoppingBag = () => {
                     <div className="left__col aem-GridColumn aem-GridColumn--default--8 aem-GridColumn--phone--1">
                         {cart.map(RenderList)}
 
-                        <Accordion />
+                        <div className="accordion-wrapper">
+                            {accordionData.map(({ title, content, subcontent }) => (
+                                <Accordion key={title} title={title} content={content} subcontent={subcontent} />
+                            ))}
+                        </div>
 
                     </div>
                     <div className="right__col aem-GridColumn aem-GridColumn--default--4 aem-GridColumn--phone--1">
