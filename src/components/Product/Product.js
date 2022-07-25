@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addSelectedProduct } from "../../redux/actions/productsActions";
+import { addSelectedProduct, setWishlist } from "../../redux/actions/productsActions";
 import ThumbnailCarousal from "./../ThumbnailCaraousal/ThumbnailCaraousal";
 import StarRatings from 'react-star-ratings';
 
@@ -10,11 +10,13 @@ import icon1 from "./images/sweat.png";
 import icon2 from "./images/breathable.png";
 import icon3 from "./images/feather.png";
 import icon4 from "./images/materials.png";
+import { ReactComponent as RedLike } from './../../assets/images/red-like.svg';
+import { ReactComponent as BlackLike } from './../../assets/images/black-like.svg';
 
 
 const Product = () => {
 
-
+  const wishlistProducts = useSelector((state) => state.wishlist.wishlist);
   const { productId } = useParams();
   // Fetch data from store
   let products = useSelector((state) => state.product.products);
@@ -22,8 +24,8 @@ const Product = () => {
   let product = products.find(obj => {
     return obj.id == productId
   })
-  const { image, title, price, description} = product;
- 
+  const { image, title, price, description } = product;
+
   //START Quantity Code
   let [num, setQuantity] = useState(1);
 
@@ -59,6 +61,10 @@ const Product = () => {
     navigate(path);
   }
 
+  const onClickHandler = (id) => {
+    dispatch(setWishlist(id));
+  };
+
   return (
     <div>
       <article className="product-wrapper aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
@@ -70,7 +76,7 @@ const Product = () => {
           <p className="__price">${price}</p>
           <StarRatings
             rating={product.rating.rate}
-            starRatedColor="rgb(23, 32, 38)"           
+            starRatedColor="rgb(23, 32, 38)"
             numberOfStars={5}
             name='rating'
             starDimension="18px"
@@ -91,12 +97,10 @@ const Product = () => {
             <button onClick={routeChange} className="primary__btn">ADD TO CART</button>
 
             <div className="social__share">
-              <span tabIndex="0" role="link" aria-label="like product">
-                <svg className="like" xmlns="http://www.w3.org/2000/svg" width="22.903" height="20.232" viewBox="0 0 22.903 20.232">
-                  <path id="heart" d="M20.84,4.61a5.5,5.5,0,0,0-7.78,0L12,5.67,10.94,4.61a5.5,5.5,0,0,0-7.78,7.78l1.06,1.06L12,21.23l7.78-7.78,1.06-1.06a5.5,5.5,0,0,0,0-7.78Z"
-                    transform="translate(-0.549 -1.998)" fill="none"
-                    stroke="#172026" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" />
-                </svg> Save
+              <span tabIndex="0" role="link" aria-label="like product">                
+                  {wishlistProducts?.includes(product.id)
+                   ? < RedLike onClick={() => onClickHandler(product.id)} />
+                    : <BlackLike onClick={() => onClickHandler(product.id)} />} Save                
               </span>
 
               <span tabIndex="0" role="link" aria-label="social media share">

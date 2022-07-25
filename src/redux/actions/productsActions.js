@@ -36,3 +36,11 @@ export const setFilter = (filter) => {
   };
 };
 
+
+export const setWishlist = (id) => {
+  return {
+    type: ActionTypes.SET_WISHLIST,
+    payload: id,
+  };
+};
+
