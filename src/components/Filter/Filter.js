@@ -7,16 +7,11 @@ import './Filter.scss';
 const Filter = (props) => {
 
     const dispatch = useDispatch();
-    const [filterValue, setFilterValue] = useState(false);
-
-    useEffect(() => {        
-        dispatch(setFilter(filterValue));
-    }, [filterValue]);
-
-    
-    const handleClick = (event, id) => {
-        event.target.checked ? setFilterValue(id) : setFilterValue('');
+       
+    const handleClick = (event, name) => {
+        dispatch(setFilter(name));
     };
+    
 
     return (
         <div className="filter-wrapper">
@@ -28,7 +23,7 @@ const Filter = (props) => {
                             <input type="checkbox" 
                             id={`option-${filter.id}`}
                             name={`option-${filter.id}`} value={filter.id} 
-                            onClick={event => handleClick(event, filter.id)} />
+                            onClick={event => handleClick(event, filter.name)} />
                             <label htmlFor={`option${filter.id}`}>{filter.name}</label>
                         </li>
                     );

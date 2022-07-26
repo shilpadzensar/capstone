@@ -11,26 +11,28 @@ import Sliders from './images/sliders.svg';
 import upArrow from './images/arrow-up.svg';
 import downArrow from './images/arrow-down.svg';
 
-const CATEGORIES = {"men": "men's clothing",
-                    "women": "women's clothing",
-                    "jewelery": "jewelery",
-                    "electronics": "electronics" };
+const CATEGORIES = {
+    "men": "men's clothing",
+    "women": "women's clothing",
+    "jewelery": "jewelery",
+    "electronics": "electronics"
+};
 
 
 const ProductList = () => {
     const dispatch = useDispatch();
     const products = useSelector((state) => state.product.products);
-    const filter = useSelector((state) => state.product.filter);     
+    const filterVal = useSelector((state) => state.product.category);
     const [isLoading, setIsLoading] = useState(false);
     const [currentPage, setCurrentPage] = useState(1);
     const [filterdata, setFilterdata] = useState(products);
     const postsPerPage = 9;
-   
+
     const { category } = useParams();
-    
+
     const fetchProducts = async () => {
         setIsLoading(true);
-              
+
         const response = await axios
             .get("https://fakestoreapi.com/products")
             .then(res => {
@@ -39,36 +41,30 @@ const ProductList = () => {
             })
             .catch((err) => {
                 console.log("Err: ", err);
-            });              
-       
-            if (category == 'all'){  
-                setFilterdata(response.data);  
-            }
+            });
+
+        setFilterdata(response.data);
         dispatch(setProducts(response.data));
     };
 
     useEffect(() => {
-        fetchProducts();
-    }, []);
-
-    useEffect(() => {
-        if (category != 'all'){  
-         
-            let filterCat = products.filter(cat => cat.category === CATEGORIES[filter ? filter : category])            
-            setFilterdata((p)=>{
-                p = [...filterCat];
-                return p;});            
-        }else {             
-            setFilterdata(products);      
+        if (products.length) {
+            if (category != 'all') {
+                let filterCategory = filterVal.length ? filterVal : [CATEGORIES[category]];
+                let filterCat = products.filter(item => filterCategory.includes(item.category.toLowerCase()));
+                setFilterdata(filterCat);                
+            } else {
+                setFilterdata(products);
+            }
+        } else {
+            fetchProducts();
         }
-        
-    }, [category, filter]);
-
-
+    }, [products, category, filterVal]);
+    
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
-    
+
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentProducts = filterdata.slice(indexOfFirstPost, indexOfLastPost);
@@ -114,7 +110,7 @@ const ProductList = () => {
                     itemClass="page-item"
                     linkClass="page-link"
                 />
-            </div>  
+            </div>
         </div>
 
     );

@@ -4,7 +4,7 @@ import { cloneDeep } from "lodash";
 const intialState = {
   products: [],
   product: [],
-  category: []
+  category: []  
 };
 
 const intialCartState = {
@@ -12,14 +12,14 @@ const intialCartState = {
 };
 
 
-const wishlistState ={
-  wishlist:[]
+const wishlistState = {
+  wishlist: []
 }
 
 
 const addProductToCart = (state, action) => {
   let products = cloneDeep(state.cart);
-  products.push(action.payload)  
+  products.push(action.payload)
   products = products.filter((v, i, a) => a.findIndex(o => (o.id === v.id)) === i)
   return { ...state, cart: products };
 }
@@ -31,6 +31,18 @@ const removeProductToCart = (state, action) => {
   return { ...state, cart: products };
 }
 
+
+const setFilterCategory = (state, action) => {
+  let categories = cloneDeep(state.category);
+  let payload = action.payload.toLowerCase();
+  if (categories && categories.includes(payload)) {
+    categories = categories.filter(name => name != payload)
+  } else {
+    categories = [...categories, payload];
+  }
+  return { ...state, category: categories };
+}
+
 export const productsReducer = (state = intialState, action) => {
   switch (action.type) {
     case ActionTypes.SET_PRODUCTS:
@@ -38,7 +50,7 @@ export const productsReducer = (state = intialState, action) => {
     case ActionTypes.SELECTED_PRODUCT:
       return { ...state, product: action.payload };
     case ActionTypes.SET_FILTER:
-      return { ...state, filter: action.payload };
+      return setFilterCategory(state, action);
     default:
       return state;
   }
@@ -58,14 +70,14 @@ export const cartProductsReducer = (state = intialCartState, action) => {
 
 
 export const wishlistReducer = (state = wishlistState, action) => {
-  
+
   switch (action.type) {
     case ActionTypes.SET_WISHLIST:
       let itemIds = cloneDeep(state.wishlist);
-      if(itemIds.includes(action.payload)){
-        itemIds = itemIds.filter(id=>id != action.payload)
-      }else{
-        itemIds = [...itemIds, action.payload]; 
+      if (itemIds.includes(action.payload)) {
+        itemIds = itemIds.filter(id => id != action.payload)
+      } else {
+        itemIds = [...itemIds, action.payload];
       }
       return { ...state, wishlist: itemIds };
     default:

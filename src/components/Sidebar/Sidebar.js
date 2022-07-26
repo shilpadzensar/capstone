@@ -6,8 +6,8 @@ import Filter from '../Filter/Filter';
 const CATEGORIES = [
     { id:"jewelery", name: 'Jewelery'},
     { id:"electronics", name: 'Electronics'},
-    { id:"men", name: 'Men\' Clothing'},
-    { id:"women", name: 'Women\' Clothing'}
+    { id:"men", name: 'Men\'s Clothing'},
+    { id:"women", name: 'Women\'s Clothing'}
 ];
 
 

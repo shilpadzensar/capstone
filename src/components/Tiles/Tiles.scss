@@ -1,11 +1,15 @@
 @import '../../styles/base/mixins';
 
 .tiles-wrapper {
-    img {       
+    
+    position: relative;
+    z-index: 1;
+
+    img {
         object-fit: contain;
-        object-position: 50% 50%;
         width: 100%;    
-        height: 245px;
+        height: 270px;
+        padding: 0 10px;
         box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px;
 
 
@@ -53,7 +57,11 @@
 
 
 @include tablet {
-    .tiles-wrapper {  
+    .tiles-wrapper {
+        margin-top: -50px;
+        img {
+            object-fit: unset;
+        }
         article {
             margin-right: 13px;
             width: auto;
