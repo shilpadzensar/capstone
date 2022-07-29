@@ -21,6 +21,7 @@
     .aem-GridColumn {
         position: relative;
         padding: 7px;
+        background-color: var(--white);
     }
     
     .__tile {
@@ -59,9 +60,7 @@
 @include tablet {
     .tiles-wrapper {
         margin-top: -50px;
-        img {
-            object-fit: unset;
-        }
+        
         article {
             margin-right: 13px;
             width: auto;

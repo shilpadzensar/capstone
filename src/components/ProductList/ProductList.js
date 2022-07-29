@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import Pagination from "react-js-pagination";
+import { orderBy } from "lodash";
 import { setProducts } from "../../redux/actions/productsActions";
 import ProductItem from "./../ProductItem/ProductItem";
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
@@ -27,6 +28,7 @@ const ProductList = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [filterdata, setFilterdata] = useState(products);
     const postsPerPage = 9;
+    const [sortValue, setSortValue] = useState();
 
     const { category } = useParams();
 
@@ -52,18 +54,36 @@ const ProductList = () => {
             if (category != 'all') {
                 let filterCategory = filterVal.length ? filterVal : [CATEGORIES[category]];
                 let filterCat = products.filter(item => filterCategory.includes(item.category.toLowerCase()));
-                setFilterdata(filterCat);                
+                setFilterdata(filterCat);
             } else {
                 setFilterdata(products);
+            }
+
+            if (sortValue) {
+
+                if (sortValue === "low_to_high") {
+                    let sortArray = orderBy(filterdata, ['price'], ["asc"]);
+                    setFilterdata(sortArray);
+                } else if (sortValue === "high_to_low") {
+                    let sortArray = orderBy(filterdata, ['price'], ["desc"]);
+                    setFilterdata(sortArray);
+                } else {
+                    let sortArray = orderBy(filterdata, [(c) => c.rating.rate], ["desc"]);
+                    setFilterdata(sortArray);
+                }                
             }
         } else {
             fetchProducts();
         }
-    }, [products, category, filterVal]);
-    
+    }, [products, category, filterVal, sortValue]);
+
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     };
+
+    function handleSelectChange(event) {      
+        setSortValue(event.target.value);
+    }
 
     const indexOfLastPost = currentPage * postsPerPage;
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
@@ -76,9 +96,8 @@ const ProductList = () => {
             <div className="show__lg">
                 {filterdata.length > 0 && <span>{filterdata.length} Results</span>}
 
-                <select className="sort-product">
-                    <option value="latest">Sort By Latest</option>
-                    <option value="polularity">Sort By Polularity</option>
+                <select className="sort-product" value={sortValue} onChange={handleSelectChange}>
+                    <option value="rating">Sort By Rating</option>
                     <option value="low_to_high">Sort By Low to High</option>
                     <option value="high_to_low">Sort By High to Low</option>
                 </select>

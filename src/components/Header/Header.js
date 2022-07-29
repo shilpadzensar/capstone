@@ -10,11 +10,12 @@ import {Link} from 'react-router-dom';
 import './Header.scss';
 
 const navArr = [
-    { id: 0, name: "All", link: "/product/category/all" },
-    { id: 1, name: "Women", link: "/product/category/women" },
-    { id: 2, name: "Men", link: "/product/category/men" },
-    { id: 3, name: "Jewelery", link: "/product/category/jewelery" },
-    { id: 4, name: "Electronics", link: "/product/category/electronics" }
+    { id: 0, name: "Dashboard", link: "/capstone" },
+    { id: 1, name: "All", link: "/product/category/all" },
+    { id: 2, name: "Women", link: "/product/category/women" },
+    { id: 3, name: "Men", link: "/product/category/men" },
+    { id: 4, name: "Jewelery", link: "/product/category/jewelery" },
+    { id: 5, name: "Electronics", link: "/product/category/electronics" }
 ];
 
 function Header() {
@@ -30,8 +31,7 @@ function Header() {
         }, 0)
     );
 
-    
-   const [activeTab, setActiveTab] = useState('All');   
+   const [activeTab, setActiveTab] = useState('All');
 
     return (
         <div className="header-wrapper">

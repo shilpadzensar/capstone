@@ -14,7 +14,7 @@ function Banner(prop) {
     }
 
     return (
-        <div className={`${prop.container} banner-wrapper banner--${prop.flow}` }>
+        <div className={`${prop.container ? prop.container : '' } banner-wrapper banner--${prop.flow ? prop.flow :''}` }>
 
             <div className="img__banner">
                 <img src={BannerImg} alt="banner image" ></img>
