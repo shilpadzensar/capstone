@@ -7,14 +7,14 @@ import MapPin from './images/map-pin.svg';
 
 function Banner(prop) {
 
-    let navigate = useNavigate(); 
-    const routeChange = () =>{ 
-        let path = '/product/category/electronics'; 
+    let navigate = useNavigate();
+    const routeChange = () => {
+        let path = '/product/category/electronics';
         navigate(path);
     }
 
     return (
-        <div className={`${prop.container ? prop.container : '' } banner-wrapper banner--${prop.flow ? prop.flow :''}` }>
+        <div className={`${prop.container ? prop.container : ''} banner-wrapper banner--${prop.flow ? prop.flow : 'ltr'}`}>
 
             <div className="img__banner">
                 <img src={BannerImg} alt="banner image" ></img>
@@ -25,12 +25,9 @@ function Banner(prop) {
                 {prop.description && <p>{prop.description}</p>}
                 {prop.btn && <Button type="promo" onClick={routeChange}>{prop.btn}</Button>}
 
-                            {prop.showLocator && <div className="banner__locator" ><img src={MapPin} alt="map pin" /><hr /></div>}
-            
-                
+                {prop.showLocator && <div className="banner__locator" ><img src={MapPin} alt="map pin" /><hr /></div>}
+
             </div>
-
-
         </div>
     );
 }

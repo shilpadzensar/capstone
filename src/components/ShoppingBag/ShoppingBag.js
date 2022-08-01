@@ -31,7 +31,7 @@ const RenderList = ({ product, updateQuantity, showActionMenu, onClickHandler, r
                         <h5>{product.title}</h5>
                         <p>Size: Medium</p>
                         <p>Color: Storm</p>
-                        <p>Price: {product.price}</p>
+                        <p>Price: ${product.price}</p>
                     </div>
                     <span className="show__xs">
                         {showActionMenu ?

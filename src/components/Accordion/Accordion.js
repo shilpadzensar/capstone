@@ -13,7 +13,7 @@ const Accordion = ({ title, content, subcontent }) => {
                     <div className='cart__accordian__title'>{title}<br />
                         <span className='accordion__subtitle '>{subcontent}</span></div>
 
-                    <div className='text__right'>{isActive ? <Downarrow /> : <Uparrow />}</div>
+                    <div className='text__right'>{isActive ? <Uparrow /> : <Downarrow />}</div>
                 </div>
                 {isActive && <div className="accordion__content">{content}</div>}
             </div>

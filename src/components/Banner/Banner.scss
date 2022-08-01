@@ -61,12 +61,16 @@
 
 
 @include tablet {
-    .banner-wrapper {
+    .banner-wrapper {       
         flex-direction: row-reverse;
+
+        .img__banner {
+            padding: 10px 0;
+        }
 
         .banner__content {
             margin: 0;
-            width: 555px;
+            width: 603px;
             padding: 80px;
             border: 1px solid;
         }
@@ -78,6 +82,9 @@
             top: unset;
         }
 
+    }
+    .banner--ltr {
+        max-width: 1970px;
     }
 
     .banner--rtl{
