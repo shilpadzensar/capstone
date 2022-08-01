@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addSelectedProduct, setWishlist } from "../../redux/actions/productsActions";
 import ThumbnailCarousal from "./../ThumbnailCaraousal/ThumbnailCaraousal";
 import StarRatings from 'react-star-ratings';
+import Quantity from "./../Quantity/Quantity";
 
 import './Product.scss';
 import icon1 from "./images/sweat.png";
@@ -18,54 +19,36 @@ const Product = () => {
 
   const wishlistProducts = useSelector((state) => state.wishlist.wishlist);
   const { productId } = useParams();
-  // Fetch data from store
+  let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [isReadMore, setIsReadMore] = useState(true); 
+  const [quantity, setQuantity] = useState(1);
+
   let products = useSelector((state) => state.product.products);
 
   let product = products.find(obj => {
     return obj.id == productId
   })
+
   const { image, title, price, description } = product;
 
-  //START Quantity Code
-  let [num, setQuantity] = useState(1);
-
-  let increaseQuantity = () => {
-    if (num < 10) {
-      setQuantity(Number(num) + 1);
-    }
-  };
-
-  let decreaseQuantity = () => {
-    if (num > 0) {
-      setQuantity(num - 1);
-    }
-  }
-
-  let handleChange = (e) => {
-    setQuantity(e.target.value);
-  }
-  // END Quantity Code
-
-
-  let navigate = useNavigate();
-  let textInput = React.createRef();
-  const dispatch = useDispatch();
-
   const routeChange = () => {
-
-    let item = { ...product, quantity: num }
-
+    let item = { ...product, quantity: quantity }
     dispatch(addSelectedProduct(item));
 
     let path = `/cart`;
     navigate(path);
   }
 
+  const updateQuantity = (num) => {
+    setQuantity(num);
+  }
+
   const onClickHandler = (id) => {
     dispatch(setWishlist(id));
   };
 
-  return (
+ return (
     <div>
       <article className="product-wrapper aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
         <div className="left__col aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1">
@@ -82,25 +65,32 @@ const Product = () => {
             starDimension="18px"
             starSpacing="2px"
           />({product.rating.count})
-          <p className="__description">{description}</p>
+
+          <p className="__description">
+
+            {isReadMore ? description.slice(0, 125) : description}
+            &nbsp;
+            <span className="show--more" onClick={() => setIsReadMore(!isReadMore)} >
+              {isReadMore ? "Read more" : "Show less"}
+            </span>       
+          </p>
 
           <section>
-            <p>Quantity</p>
-            <div className="quantity__wrapper">
-              <span className="--minus" onClick={decreaseQuantity}></span>
-              <input ref={textInput} type="text" className="--quantity" value={num} onChange={handleChange} />
-              <span className="--plus" onClick={increaseQuantity}></span>
+            <label className="quantity__label">Quantity</label>
+            <div className="quantity__section">
+              <Quantity quantity={quantity} updateQuantity={(value) => updateQuantity(value)} />
             </div>
           </section>
+
 
           <section>
             <button onClick={routeChange} className="primary__btn">ADD TO CART</button>
 
             <div className="social__share">
-              <span tabIndex="0" role="link" aria-label="like product">                
-                  {wishlistProducts?.includes(product.id)
-                   ? < RedLike onClick={() => onClickHandler(product.id)} />
-                    : <BlackLike onClick={() => onClickHandler(product.id)} />} Save                
+              <span tabIndex="0" role="link" aria-label="like product">
+                {wishlistProducts?.includes(product.id)
+                  ? <> <RedLike onClick={() => onClickHandler(product.id)} /> Saved</>
+                  : <> <BlackLike onClick={() => onClickHandler(product.id)} /> Save for later</>}
               </span>
 
               <span tabIndex="0" role="link" aria-label="social media share">

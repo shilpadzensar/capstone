@@ -36,7 +36,7 @@
         img {
             display: block;
             width: 100%;
-            height: 680px;
+            @include toRem("height", 800);          
             object-fit: cover;
         }
     }
@@ -58,7 +58,7 @@
             font: var(--unnamed-font-style-normal) normal var(--unnamed-font-weight-normal) var(--unnamed-font-size-16)/var(--unnamed-line-spacing-24) var(--unnamed-font-family-muli);
             letter-spacing: var(--unnamed-character-spacing-0);
             color: var(--unnamed-color-172026);
-            padding-bottom: 32px;
+            @include toRem("padding-bottom", 32);
         }
     }   
 }
@@ -69,7 +69,6 @@
     .banner-caraousal-wrapper {
 
         .swiper {
-
             .swiper-button-prev,
             .swiper-button-next {
                 display: block;
@@ -81,16 +80,12 @@
 
             .swiper-button-next:after, .swiper-button-prev:after {
                 color: var(--gray-d1);
-                width: 20px;
-                height: 40px;
+                @include toRem("width", 20);
+                @include toRem("height", 40);               
             }
 
-            .swiper-button-prev { 
-                margin-left: 56px;
-            }
-
-            .swiper-button-next {
-                margin-right: 56px;
+            .swiper-button-prev, .swiper-button-next {
+                @include toRem("margin-right", 16);  
             }
 
             img {
@@ -101,15 +96,36 @@
         .banner__details {
             position: initial;
             background-color: var(--gray-l1);
-            height: 450px;
+            @include toRem("height", 650);           
             text-align: left;
-            padding: 68px 100px;
+            padding: 75px 50px;
         }
 
         .banner__image {
             -webkit-mask-image:none;
             mask-image: none;
-            height: 450px;
+            @include toRem("height", 650);   
         }
     }
+}
+
+
+@include desktop {
+
+    .banner-caraousal-wrapper {
+        .banner__details {
+            position: initial;
+            background-color: var(--gray-l1);
+            @include toRem("height", 650);           
+            text-align: left;
+            padding: 175px 100px;
+        }
+
+        .banner__image {
+            -webkit-mask-image:none;
+            mask-image: none;
+            @include toRem("height", 650);   
+        }
+    }
+
 }

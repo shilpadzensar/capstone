@@ -18,10 +18,19 @@ const wishlistState = {
 
 
 const addProductToCart = (state, action) => {
-  let products = cloneDeep(state.cart);
-  products.push(action.payload)
-  products = products.filter((v, i, a) => a.findIndex(o => (o.id === v.id)) === i)
-  return { ...state, cart: products };
+  let items = cloneDeep(state.cart);
+    const itemInCart = items.find(item => item.id === action.payload.id);  
+    if (!itemInCart) {
+        items = [...items, action.payload];
+    } else {
+        items.forEach(item => {
+            if (item.id === action.payload.id) {              
+                item.quantity = action.payload.quantity;
+            }
+        });
+    }
+
+  return { ...state, cart: items };
 }
 
 

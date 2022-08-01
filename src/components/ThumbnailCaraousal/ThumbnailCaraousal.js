@@ -17,8 +17,8 @@ const ThumbnailCaraousal = (props) => {
 
     function showSlides(n) {
         let i;
-        let slides = document.getElementsByClassName("slide-image");
-        let dots = document.getElementsByClassName("thumbnail");
+        let slides = document.getElementsByClassName("slide--image");
+        let dots = document.getElementsByClassName("__thumbnail");
         if (n > slides.length) { slideIndex = 1 }
         if (n < 1) { slideIndex = slides.length }
         for (i = 0; i < slides.length; i++) {
@@ -40,43 +40,43 @@ const ThumbnailCaraousal = (props) => {
     return (        
         <div className="thumbnail-caraousal-wrapper aem-Grid aem-Grid--12">
             <div className="row show__lg aem-GridColumn aem-GridColumn--default--2 aem-GridColumn--phone--12">
-                <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(1)} alt="Product 1" />
+                <div className="thumbnail__caraousal__column">
+                    <img className="__thumbnail" src={image} onClick={() => currentSlide(1)} alt="Product 1" />
                 </div>
-                <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(2)} alt="Product 2" />
+                <div className="thumbnail__caraousal__column">
+                    <img className="__thumbnail" src={image} onClick={() => currentSlide(2)} alt="Product 2" />
                 </div>
-                <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(3)}  alt="Product 3" />
+                <div className="thumbnail__caraousal__column">
+                    <img className="__thumbnail" src={image} onClick={() => currentSlide(3)}  alt="Product 3" />
                 </div>
-                <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(4)}  alt="Product 4" />
+                <div className="thumbnail__caraousal__column">
+                    <img className="__thumbnail" src={image} onClick={() => currentSlide(4)}  alt="Product 4" />
                 </div>
-                <div className="thumbnail-caraousal-column">
-                    <img className="thumbnail" src={image} onClick={() => currentSlide(5)}  alt="Product 5" />
+                <div className="thumbnail__caraousal__column">
+                    <img className="__thumbnail" src={image} onClick={() => currentSlide(5)}  alt="Product 5" />
                 </div>                
 
-                <a className="next-slide"  onClick={() => plusSlides(1)}><img src={downArrow} alt="Product 7" /></a>
+                <a className="next--slide"  onClick={() => plusSlides(1)}><img src={downArrow} alt="Product 7" /></a>
             </div>
 
             <div className="aem-GridColumn aem-GridColumn--default--10 aem-GridColumn--phone--12">
-                <div className="slide-image img--hover--zoom" style={{display:"block"}}>                    
+                <div className="slide--image" style={{display:"block"}}>                    
                     <img src={image} alt="large size product" />
                 </div>
 
-                <div className="slide-image img--hover--zoom">
+                <div className="slide--image">
                     <img src={image}  alt="large size product"/>
                 </div>
 
-                <div className="slide-image img--hover--zoom">
+                <div className="slide--image">
                     <img src={image} alt="large size product" />
                 </div>
 
-                <div className="slide-image img--hover--zoom">
+                <div className="slide--image">
                     <img src={image} alt="large size product" />
                 </div>
 
-                <div className="slide-image img--hover--zoom">
+                <div className="slide--image">
                     <img src={image} alt="large size product" />
                 </div>               
 

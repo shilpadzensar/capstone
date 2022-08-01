@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch} from "react-redux";
 import { setFilter } from "../../redux/actions/productsActions";
 import './Filter.scss';
@@ -8,7 +8,7 @@ const Filter = (props) => {
 
     const dispatch = useDispatch();
        
-    const handleClick = (event, name) => {
+    const handleClick = (name) => {
         dispatch(setFilter(name));
     };
     
@@ -23,7 +23,7 @@ const Filter = (props) => {
                             <input type="checkbox" 
                             id={`option-${filter.id}`}
                             name={`option-${filter.id}`} value={filter.id} 
-                            onClick={event => handleClick(event, filter.name)} />
+                            onClick={() => handleClick(filter.name)} />
                             <label htmlFor={`option${filter.id}`}>{filter.name}</label>
                         </li>
                     );

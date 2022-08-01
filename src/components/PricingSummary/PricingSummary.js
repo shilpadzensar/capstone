@@ -5,7 +5,10 @@ import './PricingSummary.scss';
 
 const COL__6 = "aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1";
 
-const pricingTotal = (subTotal, coupan, giftcard, estimated)=> subTotal ? Math.round((subTotal - coupan - giftcard + estimated) * 100.0) / 100.0 : 0.00 ;
+const pricingTotal = (subTotal, coupan, giftcard, estimated)=> 
+subTotal 
+? (Math.round((subTotal - coupan - giftcard + estimated) * 100.0) / 100.0 ).toFixed(2)
+: 0.00 ;
 
 const PricingSummary = (prop) => {
 
@@ -24,7 +27,7 @@ const PricingSummary = (prop) => {
             cart.forEach((product)=>{
                 totalAmount = totalAmount + (product.price*product.quantity);    
             });        
-            setSubTotal(totalAmount);
+            setSubTotal(totalAmount.toFixed(2));
             setCoupan( totalAmount > 150 ? coupan : 0);                     
             pricingSummary(pricingTotal(totalAmount, coupan, giftcard, estimated ));
         }

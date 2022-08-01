@@ -64,13 +64,13 @@ function BannerCaraousal() {
                     return (
                         <SwiperSlide key={data.id}>
                             <div className="aem-Grid aem-Grid--default--12 aem-Grid--phone--1">
-                                <div className="banner__details aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1">
+                                <div className="banner__details aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--tablet--6 aem-GridColumn--phone--1">
                                     <h2>{data.label}</h2>
                                     <p>{data.description}</p>
                                     <Button type="primary" onClick={routeChange}>{data.btnLabel}</Button>
                                 </div>
 
-                                <div className="banner__image aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--phone--1">
+                                <div className="banner__image aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--tablet--6 aem-GridColumn--phone--1">
                                     <img src={data.img} alt={data.altText} />
                                 </div>
                             </div>

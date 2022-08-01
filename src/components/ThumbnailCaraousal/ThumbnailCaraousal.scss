@@ -1,22 +1,23 @@
 @import '../../styles/base/mixins';
 
 .thumbnail-caraousal-wrapper {
-   @include zoomImage();
+  @include zoomImage();
 
-    position: relative;
+  position: relative;
 
-    .thumbnail-caraousal-column {
-        margin-bottom: 4px;
-        img {
-           height: 105px; 
-           width: 100%;
-           vertical-align: middle;          
-        }
+  .thumbnail__caraousal__column {
+    margin-bottom: 4px;
+
+    img {
+      height: 120px;
+      width: 100%;
+      vertical-align: middle;
     }
+  }
 
-    
-  .next-slide {
-    padding: 25px;
+
+  .next--slide {
+    padding: 0 34%;
   }
 
   .row:after {
@@ -25,29 +26,32 @@
     clear: both;
   }
   
-  .thumbnail {
-    opacity: 0.6;
+  .active{
     cursor: pointer;
-  }
-  
-  .active,
-  .thumbnail:hover {
     opacity: 1;
+    border-bottom: 5px solid var(--primary-brand);
   }
+
+  .slide--image {
+    display: none;
+
+    img {
+      height: 410px;
+      width: 100%;
+      padding: 20px;
+      cursor: pointer;
+      object-fit: contain;
+    }
+  }
+
 }
 
-.slide-image 
-{
-    display: none;
-    img {
-    width: 100%;
-    padding: 20px 40px;
-    box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px;
-    cursor: pointer;
-    transform: scale3d(0.9, 0.9, 1);
-    transition: all 0.7s;
-
+@include desktop {
+  .thumbnail-caraousal-wrapper {
+    .slide--image {
+      img {
+        height: 680px;        
+      }
+    }
   }
-} 
-   
-  
+}

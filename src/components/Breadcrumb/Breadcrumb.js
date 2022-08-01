@@ -1,4 +1,5 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom';
 import './Breadcrumb.scss';
 
 function Breadcrumb() {
@@ -6,8 +7,8 @@ function Breadcrumb() {
     return (
         <div className="breadcrumb-wrapper">
             <ul className="breadcrumb__list">
-                <li><a href="#">Clothing</a></li>
-                <li><a href="#">Women's</a></li>
+                <li><NavLink to="/product/category/all">Clothing</NavLink></li>
+                <li><NavLink to="product/category/women">Women's</NavLink></li>
                 <li>Outerwear</li>
             </ul>
         </div>

@@ -133,30 +133,30 @@
             }
 
         }
-
-        .primary__paypal__btn {
-            background-image: url('./images/pay-pal.png');
-            border: none;
-            background-repeat: no-repeat;
-            width: 245px;
-            height: 38px;
-        }
-
-        .primary__btn {
-            width: 247px;
-            height: 40px;
-            background: var(--primary-brand) 0% 0% no-repeat padding-box;
-            border-radius: 28px;
-            border: none;
-            color: #FFF;
-            text-transform: uppercase;
-        }
-
-        button {
-            margin: 24px 0 12px;
-        }
-
+        
     }
+
+
+    .primary__paypal__btn {
+        background-image: url('./images/pay-pal.png');
+        border: none;
+        background-repeat: no-repeat;       
+    }
+
+    .primary__btn {       
+        background: var(--primary-brand) 0% 0% no-repeat padding-box;
+        border-radius: 28px;
+        border: none;
+        color: #FFF;
+        text-transform: uppercase;
+    }
+
+    button {
+        margin: 24px 0 12px;
+        width: 244px;
+        height: 40px;
+    }
+
 
 }
 
@@ -200,7 +200,19 @@
             }
         }
 
-
+        button {         
+            width: 215px;            
+        }
     }
 
+}
+
+
+@include desktop {
+
+    .shoppingbag {
+        button {           
+            width: 244px;
+        }
+    }
 }

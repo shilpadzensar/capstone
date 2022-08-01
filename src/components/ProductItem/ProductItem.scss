@@ -1,8 +1,7 @@
 @import '../../styles/base/mixins';
 
 .product__item {
-    margin-bottom: 21px;
-    box-shadow: rgb(60 64 67 / 30%) 0px 1px 2px 0px, rgb(60 64 67 / 15%) 0px 1px 3px 1px;
+    margin-bottom: 21px;    
     cursor: pointer;
     transform: scale3d(0.9, 0.9, 1);
     transition: all 0.7s;
@@ -10,7 +9,7 @@
     @include zoomImage();
     
     img {
-        height: 170px;
+        height: 196px;
         width: 100%;
         object-fit: contain;
         object-position: 50% 50%;

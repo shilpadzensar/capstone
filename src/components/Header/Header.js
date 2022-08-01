@@ -5,7 +5,7 @@ import Hamburger from './images/hamburger.svg';
 import Cart from './images/shopping-bag.svg';
 import Close from './images/close.png';
 import User from './images/user.svg';
-import {Link} from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
 
 import './Header.scss';
 
@@ -25,13 +25,11 @@ function Header() {
     let cartLength = Number(
         cart
         .map((r) => r.quantity)
-        .reduce((p, c) => {
+        .reduce((_p, c) => {
             cartCount = cartCount + c;
             return cartCount;
         }, 0)
     );
-
-   const [activeTab, setActiveTab] = useState('All');
 
     return (
         <div className="header-wrapper">
@@ -40,15 +38,14 @@ function Header() {
                     <img className="__hamburger" id="hamburger" onClick={() => setToggle(!toggle)} aria-hidden="true"
                         data-state="show" src={Hamburger} ></img>
 
-                    <Link to="/capstone" aria-label="go to venia home page" alt="logo"><img src={Logo} className="header__logo" alt="venia logo" /></Link>
+                    <NavLink to="/capstone" aria-label="go to venia home page" alt="logo"><img src={Logo} className="header__logo" alt="venia logo" /></NavLink>
 
                     <ul className="nav__inks">
                         {navArr?.map((nav) => {
                             return (
                                 <li key={nav.id}>
-                                    <Link to={nav.link} alt={nav.name}
-                                    className={activeTab == nav.name ? 'active' : ''} 
-                                    onClick={() => setActiveTab(nav.name) } >{nav.name}</Link>
+                                    <NavLink to={nav.link} alt={nav.name}
+                                    className={({ isActive }) => (isActive ? 'active' : 'inactive')}>{nav.name}</NavLink>
                                 </li>
                             );
                         })}
